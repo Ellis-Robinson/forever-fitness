@@ -1,16 +1,25 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block page_header %}
+<!-- empty container to push content clear of headder -->
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
-<div class="container h-100">
-    <div class="row h-50">
+<div class="container home-container">
+    <div class="row shop-now-section">
         <div class="mx-auto">
             <h3>
                 <a class="btn btn-lg btn-dark text-uppercase" href="">shop now!</a>
             </h3>
         </div>
     </div>
-    <div class="row h-50">
+    <div class="row h-50 members-area-section">
         <div class="mx-auto">
             <h3>
                 <a class="btn btn-lg btn-dark text-uppercase" href="">members area</a>

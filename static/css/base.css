@@ -1,0 +1,39 @@
+html {
+    height: 100%;
+}
+
+.home-container {
+    height: 100vh;
+}
+
+.shop-now-section {
+    background: url('/media/shop-now.png') no-repeat center center;
+    background-size: cover;
+    color: #555;
+    height: 50%;
+}
+
+.shop-now-section > div > h3 {
+    padding-top: 50%;
+}
+
+.members-area-section {
+    background: url('/media/members-area.jpg') no-repeat center center;
+    background-size: cover;
+    color: #555;
+    height: 50%;
+}
+
+.members-area-section > div > h3 {
+    padding-top: 50%;
+}
+
+/* ----- media queries ----- */
+
+
+@media (min-width: 992px) {
+    /*pushes homepage content below nav section*/
+    .header-container {
+        padding-top: 164px;
+    }
+}
