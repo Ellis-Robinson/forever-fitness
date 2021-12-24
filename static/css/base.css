@@ -1,4 +1,4 @@
-html {
+body {
     height: 100%;
 }
 
@@ -10,23 +10,21 @@ html {
     background: url('/media/shop-now.png') no-repeat center center;
     background-size: cover;
     color: #555;
-    height: 50%;
-}
-
-.shop-now-section > div > h3 {
-    padding-top: 50%;
 }
 
 .members-area-section {
     background: url('/media/members-area.jpg') no-repeat center center;
     background-size: cover;
     color: #555;
-    height: 50%;
 }
 
-.members-area-section > div > h3 {
-    padding-top: 50%;
+.ff-logo {
+    width: 85px;
+    height: 70px;
+    background: url('/media/FFlogo.jpg') no-repeat center center;
+    background-size: cover
 }
+
 
 /* ----- media queries ----- */
 
@@ -35,5 +33,12 @@ html {
     /*pushes homepage content below nav section*/
     .header-container {
         padding-top: 164px;
+    }
+}
+
+@media (min-width: 768px) {
+    /*pushes homepage content below nav section*/
+    .header-container {
+        padding-top: 200px;
     }
 }
