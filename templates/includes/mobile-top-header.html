@@ -1,5 +1,5 @@
-    <div class="logo d-none d-md-block d-lg-none col-4 offset-md-4 px-4 my-auto">
-        <a href="" class="nav-link">
+   <div class="logo d-none d-md-block d-lg-none col-4 offset-md-4 px-4 my-auto">
+        <a href="" class="nav-link text-dark">
             <h4>Forever Fitness</h4>
         </a>
     </div>
@@ -11,9 +11,9 @@
     <div class="d-block col-5 offset-5 offset-md-0 col-md-4 d-lg-none px-4 my-auto">
         <ul class="list-inline list-unstyled text-center text-lg-right my-0">
             <li class="list-inline-item dropdown">
-                <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+                <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
-                    <div class="text-center">
+                    <div class="text-center text-dark">
                         <div><i class="fas fa-user fa-lg"></i></div>
                         <p class="my-0">My Account</p>
                     </div>
@@ -31,10 +31,10 @@
                     {% endif %}
                 </div>
             </li>
-            <li class="list-inline-item">
-                <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+            <li class="list-inline-item ">
+                <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-dark{% endif %} nav-link"
                     href="">
-                    <div class="text-center">
+                    <div class="text-center text-dark">
                         <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                         <p class="my-0">
                             {% if grand_total %}
@@ -49,7 +49,7 @@
         </ul>
     </div>
 
-    <div class="d-none col-12 d-md-block d-lg-none col-lg-4 px-4 my-auto">
+    <div class="d-none col-md-12 d-md-block d-lg-none px-4 my-auto">
         <form method="GET" action="">
             <div class="input-group w-100">
                 <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search">

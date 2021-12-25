@@ -25,20 +25,7 @@ body {
     background-size: cover
 }
 
-
-/* ----- media queries ----- */
-
-
-@media (min-width: 992px) {
-    /*pushes homepage content below nav section*/
-    .header-container {
-        padding-top: 164px;
-    }
-}
-
-@media (min-width: 768px) {
-    /*pushes homepage content below nav section*/
-    .header-container {
-        padding-top: 200px;
-    }
+/*pushes homepage content below nav section*/
+.header-container {
+    padding-top: 200px;
 }
