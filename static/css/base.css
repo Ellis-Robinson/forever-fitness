@@ -25,6 +25,10 @@ body {
     background-size: cover
 }
 
+.product-card {
+    min-height: 100%;
+}
+
 /*pushes homepage content below nav section*/
 .header-container {
     padding-top: 200px;
