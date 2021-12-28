@@ -33,3 +33,10 @@ body {
 .header-container {
     padding-top: 160px;
 }
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
