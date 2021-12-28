@@ -23,11 +23,13 @@
             {% for product in products %}
             <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3 mt-1 mb-1">
                 <div class="product-card card">
-                    {% if product.image %}
-                    <img src="{{ product.image.url }}" class="card-img-top" alt="product.name">
-                    {% else %}
-                    <img src="{{ MEDIA_URL }}no-image.jpg" class="card-img-top" alt="product.name">
-                    {% endif %}
+                    <a href="{% url 'product_details' product.id %}">
+                        {% if product.image %}
+                        <img src="{{ product.image.url }}" class="card-img-top" alt="product.name">
+                        {% else %}
+                        <img src="{{ MEDIA_URL }}no-image.jpg" class="card-img-top" alt="product.name">
+                        {% endif %}
+                    </a>
                     <div class="card-body">
                         <h5 class="card-title">{{product.name}}</h5>
                         <p class="card-text">£{{product.price}}</p>
