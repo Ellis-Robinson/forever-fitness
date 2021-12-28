@@ -19,9 +19,9 @@
                 Clothing
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Shorts</a>
-                <a href="" class="dropdown-item">Tops</a>
-                <a href="" class="dropdown-item">All Clothing</a>
+                <a href="{% url 'products' %}?category=shorts" class="dropdown-item">Shorts</a>
+                <a href="{% url 'products' %}?category=tops" class="dropdown-item">Tops</a>
+                <a href="{% url 'products' %}?category=shorts,tops" class="dropdown-item">All Clothing</a>
             </div>
         </li>
 
@@ -30,9 +30,9 @@
                 Accessories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item">Yoga</a>
-                <a href="" class="dropdown-item">Boxing</a>
-                <a href="" class="dropdown-item">All Accessories</a>
+                <a href="{% url 'products' %}?category=yoga" class="dropdown-item">Yoga</a>
+                <a href="{% url 'products' %}?category=boxing" class="dropdown-item">Boxing</a>
+                <a href="{% url 'products' %}?category=yoga,boxing" class="dropdown-item">All Accessories</a>
             </div>
         </li>
 
@@ -41,9 +41,9 @@
                 Consumables
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">Powders</a>
-                <a href="" class="dropdown-item">Bars</a>
-                <a href="" class="dropdown-item">All Consumables</a>
+                <a href="{% url 'products' %}?category=powders" class="dropdown-item">Powders</a>
+                <a href="{% url 'products' %}?category=bars" class="dropdown-item">Bars</a>
+                <a href="{% url 'products' %}?category=powders,bars" class="dropdown-item">All Consumables</a>
             </div>
         </li>
     </ul>
