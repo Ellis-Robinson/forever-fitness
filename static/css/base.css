@@ -29,6 +29,14 @@ body {
     height: 100%;
 }
 
+.btt-button {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
 /*pushes homepage content below nav section*/
 .header-container {
     padding-top: 160px;
