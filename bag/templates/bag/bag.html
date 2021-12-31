@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+<!-- empty container to push content clear of headder -->
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container mb-2">
+    <div class="row mb-3">
+        <div class="col">
+            <h3>Shopping Bag</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {% if bag.items %}
+            <div class="table-responsive"></div>
+            {% else %}
+            <p class="mb-4">You Shopping Bag Is Empty</p>
+            <a href="{% url 'products' %}">
+                <i class="fas fa-arrow-circle-left"></i> Keep Shopping
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
