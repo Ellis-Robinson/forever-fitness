@@ -26,7 +26,7 @@ body {
 }
 
 .product-card {
-    min-height: 100%;
+    height: 100%;
 }
 
 /*pushes homepage content below nav section*/

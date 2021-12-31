@@ -19,6 +19,54 @@
                 <h2>Products</h2>
             </div>
         </div>
+        <div class="text-center">
+            {% for c in current_categories %}
+            <a class="badge badge-pill badge-dark" href="{% url 'products' %}?category={{ c.name }}">
+                <span>{{ c.friendly_name }}</span>
+            </a>
+            {% endfor %}
+        </div>
+        <div class="mt-4 mb-5">
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-start">
+                    <p class="text-muted text-center text-md-left">
+                        {% if search_term or current_categories or current_sorting != 'None_None' %}
+                        <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
+                        {% endif %}
+                        {{ products|length }} Products{% if search_term %} found for
+                        <strong>"{{ search_term }}"</strong>{% endif %}
+                    </p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex justify-content-end">
+                    <select id="sort-selector"
+                        class="custom-select w-50 custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
+                        </option>
+                        <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low
+                            to high)</option>
+                        <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price
+                            (high to low)</option>
+                        <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating
+                            (low to high)</option>
+                        <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating
+                            (high to low)</option>
+                        <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)
+                        </option>
+                        <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)
+                        </option>
+                        <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>
+                            Category (A-Z)</option>
+                        <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>
+                            Category (Z-A)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
         <div class="row">
             {% for product in products %}
             <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3 mt-1 mb-1">
@@ -33,8 +81,11 @@
                     <div class="card-body">
                         <h5 class="card-title">{{product.name}}</h5>
                         <p class="card-text">£{{product.price}}</p>
+                        {% if product.category %}
+                        <p class="card-text"><i class="fas fa-tag"></i> {{product.category}}</p>
+                        {% endif %}
                         {% if product.rating %}
-                        <p class="card-text"><i class="fas fa-star"></i>{{product.rating}}</p>
+                        <p class="card-text"><i class="fas fa-star"></i> {{product.rating}}</p>
                         {% else %}
                         <p class="card-text">No Rating</p>
                         {% endif %}
