@@ -4,7 +4,6 @@ from django.shortcuts import render, redirect
 
 def bag(request):
     ''' loads shopping bag view '''
-
     return render(request, 'bag/bag.html')
 
 
