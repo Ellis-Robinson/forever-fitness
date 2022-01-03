@@ -37,6 +37,12 @@ body {
     bottom: 20px;
 }
 
+.btt-link,
+.remove-item,
+.update-link {
+    cursor: pointer;
+}
+
 /*pushes homepage content below nav section*/
 .header-container {
     padding-top: 160px;
