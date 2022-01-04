@@ -1,11 +1,14 @@
-''' houses all classes relating to products '''
+''' stores all classes relating to products '''
 
 from django.db import models
 
 
 class Category (models.Model):
-
+    '''
+    defines fields for Category class
+    '''
     class Meta:
+        ''' defines field name in admin '''
         verbose_name_plural = "Categories"
 
     name = models.CharField(max_length=250)
@@ -19,6 +22,9 @@ class Category (models.Model):
 
 
 class Product(models.Model):
+    '''
+    defines fields for Products class
+    '''
     category = models.ForeignKey('Category', null=True, blank=True,
                                  on_delete=models.SET_NULL)
     sku = models.CharField(max_length=250, null=True, blank=True)

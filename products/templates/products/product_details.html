@@ -92,7 +92,7 @@
                                             Shopping</a>
                                     </div>
                                     <div class="row mt-1 mb-1">
-                                        <a class="btn btn-warning" href="" role="button">Go To Checkout</a>
+                                        <a class="btn btn-warning" href="{% url 'bag' %}" role="button">Go To Checkout</a>
                                     </div>
                                 </div>
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
