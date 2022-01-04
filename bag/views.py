@@ -83,8 +83,8 @@ def remove_from_bag(request, item_id):
     try:
         product = get_object_or_404(Product, pk=item_id)
         size = None
-        if 'size' in request.POST:
-            size = request.POST['size']
+        if 'product_size' in request.POST:
+            size = request.POST['product_size']
         shopping_bag = request.session.get('bag', {})
 
         if size:
