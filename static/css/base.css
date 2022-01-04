@@ -43,6 +43,29 @@ body {
     cursor: pointer;
 }
 
+/* ------------------------------- bootstrap toasts */
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+.bag-notification-wrapper{
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 /*pushes homepage content below nav section*/
 .header-container {
     padding-top: 160px;
