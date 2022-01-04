@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% load bag_tools %}
+
+
 {% block page_header %}
 <!-- empty container to push content clear of headder -->
 <div class="container header-container">
@@ -82,7 +85,7 @@
                             <a class="update-link text-info"><small>Update</small></a>
                         </td>
                         <td class="py-3">
-                            <p class="my-0">${{ item.product.price }}</p>
+                            <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </td>
                         <td>
                             <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"
