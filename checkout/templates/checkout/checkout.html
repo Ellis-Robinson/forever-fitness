@@ -23,7 +23,7 @@
             <hr>
         </div>
     </div>
-
+    <!-- summary of current order -->
     <div class="row">
         <div class="col-12 col-lg-6 mb-5">
             <p class="text-muted">Order Summary ({{ product_count }})</p>
@@ -69,6 +69,7 @@
                 </div>
             </div>
         </div>
+        <!-- chekout form -->
         <div class="col-12 col-lg-6 order-lg-last">
             <p class="text-muted">Please fill out the form below to complete your order</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
@@ -134,4 +135,11 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
