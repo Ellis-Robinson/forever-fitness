@@ -37,7 +37,7 @@ def user_orders(request):
 
     template = 'profiles/user_orders.html'
     context = {
-        'orders': orders,
+        'orders': orders.order_by('-date'),
     }
 
     return render(request, template, context)
