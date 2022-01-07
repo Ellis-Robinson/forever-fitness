@@ -192,11 +192,19 @@
         </div>
     </div>
     <div class="row mb-4">
+        {% if from_profile %}
+        <div class="col-12 col-lg-7 text-right">
+            <a class="btn btn-dark" href="{% url 'user_orders' %}" role="button">
+                Back To Orders
+            </a>
+        </div>
+        {% else %}
         <div class="col-12 col-lg-7 text-right">
             <a class="btn btn-dark" href="{% url 'home' %}" role="button">
                 Back To Home Page
             </a>
         </div>
+        {% endif %}
     </div>
 </div>
     {% endblock %}
