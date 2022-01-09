@@ -6,6 +6,7 @@ from .forms import UserProfileForm
 
 from checkout.models import Order
 
+
 def user_profile(request):
     ''' renders users profile '''
     profile = get_object_or_404(UserProfile, user=request.user)
@@ -15,8 +16,11 @@ def user_profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Profile successfully updated")
+        else: 
+            messages.error(request, 'Unable to update profile. Is the form valid?')
 
-    form = UserProfileForm(instance=profile)
+    else:
+        form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
 
     template = 'profiles/profile.html'
