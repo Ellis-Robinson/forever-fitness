@@ -3,9 +3,12 @@ from .models import Product, Category
 
 
 class ProductForm(forms.ModelForm):
-
+    '''
+    A form for super users to add products
+    '''
     class Meta:
-        model = Product(fields = '__all__')
+        model = Product
+        fields = '__all__'
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
