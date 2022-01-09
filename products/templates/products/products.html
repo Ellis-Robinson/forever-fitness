@@ -89,9 +89,17 @@
                         {% else %}
                         <p class="card-text">No Rating</p>
                         {% endif %}
-                        <a href="">
-                            Edit Product
-                        </a>
+                        {% if request.user.is_superuser %}
+                        <small>
+                            <a href="{% url 'edit_product' product.id %}">
+                                Edit Product
+                            </a>
+                             | 
+                            <a class="text-danger" href="{% url 'delete_product' product.id %}">
+                                Delete Product
+                            </a>
+                        </small>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -122,7 +130,7 @@
 <div class="btt-button shadow-sm rounded-0 border border-black">
     <a class="btt-link d-flex h-100">
         <i class="fas fa-arrow-up text-dark mx-auto my-auto"></i>
-    </a>	
+    </a>
 </div>
 
 {% endblock %}
@@ -130,19 +138,19 @@
 {% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript">
-    $('.btt-link').click(function(e) {
-			window.scrollTo(0,0)
-		})
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0)
+    })
 </script>
 
 
 <script type="text/javascript">
-    $("#sort-selector").change(function(){
+    $("#sort-selector").change(function () {
         var selector = $(this);
         var currentUrl = new URL(window.location);
 
         var selectedVal = selector.val();
-        if(selectedVal != "reset"){
+        if (selectedVal != "reset") {
             var sort = selectedVal.split("_")[0];
             var direction = selectedVal.split("_")[1];
 
