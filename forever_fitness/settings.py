@@ -118,7 +118,7 @@ WSGI_APPLICATION = 'forever_fitness.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-if DATABASE_URL in os.environ:
+if 'DATABASE_URL' in os.environ:
     DATABASES = dj_database_url.parse(os.environ.get('DATABASE_URL'))
 else:
     DATABASES = {
