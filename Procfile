@@ -1,1 +1,1 @@
-web: gunicorn forever_fitness.wisgi:application
+web: gunicorn forever_fitness.wsgi:application
