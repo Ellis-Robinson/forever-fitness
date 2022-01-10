@@ -1,0 +1,1 @@
+web: gunicorn forever_fitness.wisgi:application
