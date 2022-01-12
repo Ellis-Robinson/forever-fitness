@@ -18,6 +18,26 @@ body {
     color: #555;
 }
 
+.users-fitness-classes-section {
+    background: url('/media/group-exercise.jpg') no-repeat center center;
+    background-size: cover;
+    background-color: #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+}
+
+.user-order-section {
+    background: url('/media/delivery-boxes.jpg') no-repeat center center;
+    background-size: cover;
+    background-color: #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+}
+
 .ff-logo {
     width: 85px;
     height: 70px;

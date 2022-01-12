@@ -16,28 +16,25 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col text-center">
             <hr>
-            <h2 class="logo-font text-center mb-4">My Profile</h2>
+            <h2 class="logo-font mb-1">My Profile</h2>
+            <small class="text-muted">{{ user.username }}</small>
             <hr>
         </div>
     </div>
-    <div class="row">
+    <div class="row mb-5">
         <!-- fitness classes and order history links -->
         <div class="col col-lg-8 order-2">
-            <div class="row">
-                <div class="col">
-                    <a class="fitness-classes-section" href="">
-                        <h2 class="mt-2 mb-2"> My Fitness Classes </h2>
-                    </a>
-                </div>
+            <div class="users-fitness-classes-section mb-1">
+                <a class="btn btn-dark" href="">
+                    <h4 class=""> My Fitness Classes </h4>
+                </a>
             </div>
-            <div class="row">
-                <div class="col">
-                    <a class="user-order-section" href="{% url 'user_orders' %}">
-                        <h2 class="mt-2 mb-2"> My Orders </h2>
-                    </a>
-                </div>
+            <div class="user-order-section mt-1">
+                <a class="btn btn-dark" href="{% url 'user_orders' %}">
+                    <h4 class=""> My Orders </h4>
+                </a>
             </div>
         </div>
         <!-- default delivery information -->
