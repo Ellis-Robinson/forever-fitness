@@ -18,6 +18,7 @@ class Category (models.Model):
         return str(self.name)
 
     def get_friendly_name(self):
+        ''' returns user friendly name '''
         return self.friendly_name
 
 
