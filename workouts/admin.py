@@ -1,7 +1,7 @@
 ''' fitness classes models, admin registration '''
 from django.contrib import admin
-from .models import WorkoutRoutine, TypeOfWorkout
+from .models import Workout, User_workouts
 
 
-admin.site.register(WorkoutRoutine)
-admin.site.register(TypeOfWorkout)
+admin.site.register(Workout)
+admin.site.register(User_workouts)

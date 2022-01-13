@@ -24,20 +24,20 @@
     <div class="row mb-5">
         <!-- fitness classes -->
         <div class="col">
-            <h4 class="text-dark"> Fitness Classes </h4>
+            <h4 class="text-dark"> Workout Routines </h4>
         </div>
     </div>
     <div class="row">
-        {% for routine in routines  %}
+        {% for workout in workouts  %}
         <div class="col-3">
             <div class="card classes-card">
                 <img src="{{ MEDIA_URL }}no-image.jpg" class="card-img-top" alt="image of class type">
                 <div class="card-body">
-                    <h5 class="card-title">{{ routine.title }}</h5>
-                    <p class="card-text"><strong>Type: </strong>{{ routine.type_of_workout }}</p>
-                    <p class="card-text"><strong>Description: </strong>{{ routine.description }}</p>
+                    <h5 class="card-title">{{ workout.title }}</h5>
+                    <p class="card-text"><strong>Type: </strong>{{ workout.type_of_workout }}</p>
+                    <p class="card-text"><strong>Description: </strong>{{ workout.description }}</p>
                     <p class="card-text">
-                        <strong>Duration: </strong>{{ routine.duration }}
+                        <strong>Duration: </strong>{{ workout.duration }}
                     </p>
                     <a href="#" class="btn btn-primary">Add To My Routines</a>
                 </div>
