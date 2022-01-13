@@ -1,16 +1,16 @@
 ''' stores all functions for fitness_classes app '''
 from django.shortcuts import render
-from .models import FitnessClass
+from .models import WorkoutRoutine
 
 
 def members_area(request):
     ''' loads fitness classes page '''
 
-    classes = FitnessClass.objects.all() 
+    routines = WorkoutRoutine.objects.all()
 
-    template = 'fitness_classes/members_area.html'
+    template = 'workouts/members_area.html'
     context = {
-        'classes': classes
+        'routines': routines
     }
 
     return render(request, template, context)

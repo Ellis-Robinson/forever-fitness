@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='TypeOfFitness',
+            name='TypeOfWorkout',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=250)),
@@ -21,13 +21,13 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='FitnessClass',
+            name='WorkoutRoutine',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=250)),
                 ('Description', models.TextField()),
                 ('Duration', models.DurationField()),
-                ('type_of_fitness', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='fitness_classes.typeoffitness')),
+                ('type_of_workout', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='workouts.typeofworkout')),
             ],
         ),
     ]

@@ -1,15 +1,15 @@
-''' Classes and methods for fitness_classes app '''
+''' Classes and methods for workouts app '''
 from django.db import models
 
 
-class TypeOfFitness(models.Model):
+class TypeOfWorkout(models.Model):
     '''
-    Defines type of fitness, used for fitness classes
+    Defines type of workouts, used for fitness workouts
     '''
 
     class Meta:
         ''' defines field name in admin '''
-        verbose_name_plural = "Types of fitness"
+        verbose_name_plural = "Types of workout"
 
     name = models.CharField(max_length=250)
     friendly_name = models.CharField(max_length=250, null=True, blank=True)
@@ -22,17 +22,17 @@ class TypeOfFitness(models.Model):
         return self.friendly_name
 
 
-class FitnessClass(models.Model):
+class WorkoutRoutine(models.Model):
     '''
-    A fitness class model, detailing key information for fitness classes
+    A workout routine model, detailing key information for each routine
     '''
 
     class Meta:
         ''' defines field name in admin '''
-        verbose_name_plural = "Fitness Classes"
+        verbose_name_plural = "Workout routines"
 
     title = models.CharField(max_length=250)
-    type_of_fitness = models.ForeignKey('TypeOfFitness', null=True,
+    type_of_workout = models.ForeignKey('TypeOfWorkout', null=True,
                                         blank=True, on_delete=models.SET_NULL)
     description = models.TextField()
     duration = models.DurationField()

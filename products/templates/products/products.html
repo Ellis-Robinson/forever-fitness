@@ -69,7 +69,7 @@
         </div>
         <div class="row">
             {% for product in products %}
-            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3 mt-1 mb-1">
+            <div class="col-sm-6 col-md-4 col-lg-3 mt-1 mb-1">
                 <div class="product-card card">
                     <a href="{% url 'product_details' product.id %}">
                         {% if product.image %}
@@ -94,7 +94,7 @@
                             <a href="{% url 'edit_product' product.id %}">
                                 Edit Product
                             </a>
-                             | 
+                            |
                             <a class="text-danger" href="{% url 'delete_product' product.id %}">
                                 Delete Product
                             </a>
