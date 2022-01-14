@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+<!-- empty container to push content clear of headder -->
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="col-10 offset-1 mb-4">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font text-center">Class Management</h2>
+                <h5 class="text-muted text-center">Delete Workout</h5>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 mt-1 mb-1">
+                <div class="card classes-card">
+                    <img src="{{ MEDIA_URL }}no-image.jpg" class="card-img-top" alt="image of class type">
+                    <div class="card-body">
+                        <h5 class="card-title">{{workout.title}}</h5>
+                        <p class="card-text">{{workout.description}}</p>
+                        <form class="form" action="{% url 'delete_workout' workout.id %}" method="POST">
+                            {% csrf_token %}
+                            <div class="col-12">
+                                <div class="row mt-1 mb-1">
+                                    <input type="submit" class="btn btn-danger rounded-1" value="Delete">
+                                </div>
+                                <div class="row mt-1 mb-1">
+                                    <a class="btn btn-success" href="{% url 'members_area' %}" role="button">Cancel</a>
+                                </div>
+                            </div>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{% endblock %}

@@ -39,16 +39,18 @@
                     <p class="card-text">
                         <strong>Duration: </strong>{{ workout.duration }}
                     </p>
+                    {% if request.user.is_superuser %}
                     <small>
                         <a href="{% url 'edit_workout' workout.id %}">
                             Edit Workout
                         </a>
                         |
-                        <a class="text-danger" href="">
+                        <a class="text-danger" href="{% url 'delete_workout' workout.id %}">
                             Delete Workout
                         </a>
                     </small>
-                    <a href="#" class="btn btn-primary">Add To My Routines</a>
+                    {% endif %}
+                    <a href="#" class="btn btn-primary mt-2">Add To My Routines</a>
                 </div>
             </div>
         </div>

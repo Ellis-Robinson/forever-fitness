@@ -91,3 +91,27 @@ def edit_workout(request, workout_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_workout(request, workout_id):
+    ''' Delete a workout from database '''
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    workout = get_object_or_404(Workout, pk=workout_id)
+
+    if request.method == "POST":
+
+        workout.delete()
+        messages.success(request, f'{workout.title} deleted')
+
+        return redirect(reverse('members_area'))
+
+    else:
+        template = 'workouts/delete_workout.html'
+        context = {
+            'workout': workout,
+        }
+        return render(request, template, context)
