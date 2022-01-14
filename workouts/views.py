@@ -1,6 +1,9 @@
 ''' stores all functions for fitness_classes app '''
 from django.shortcuts import render, get_object_or_404
-from .models import Workout, User_workouts
+from django.contrib.auth.models import User
+
+from .models import Workout
+from profiles.models import UserProfile
 
 
 def members_area(request):
@@ -19,7 +22,8 @@ def members_area(request):
 def my_workouts(request):
     ''' loads page with users saved routines '''
 
-    workouts = get_object_or_404(User_workouts, user=request.user)
+    users_profile = get_object_or_404(UserProfile, user=request.user)
+    workouts = Workout.objects.filter(users=users_profile)
 
     template = 'workouts/my_workouts.html'
     context = {

@@ -1,7 +1,19 @@
 ''' fitness classes models, admin registration '''
 from django.contrib import admin
-from .models import Workout, User_workouts
+from django.db import models
+from django.forms import CheckboxSelectMultiple
+from .models import Workout
 
 
-admin.site.register(Workout)
-admin.site.register(User_workouts)
+class WorkoutAdmin(admin.ModelAdmin):
+    '''
+    sorts out workouts admin
+    '''
+    formfield_overrides = {
+        models.ManyToManyField: {
+            'widget': CheckboxSelectMultiple
+        },
+    }
+
+
+admin.site.register(Workout, WorkoutAdmin)
