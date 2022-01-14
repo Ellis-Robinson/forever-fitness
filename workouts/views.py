@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 from .models import Workout
 from profiles.models import UserProfile
+from .forms import WorkoutForm
 
 
 def members_area(request):
@@ -20,7 +21,7 @@ def members_area(request):
 
 
 def my_workouts(request):
-    ''' loads page with users saved routines '''
+    ''' loads page with users saved classes '''
 
     users_profile = get_object_or_404(UserProfile, user=request.user)
     workouts = Workout.objects.filter(users=users_profile)
@@ -30,4 +31,18 @@ def my_workouts(request):
         'workouts': workouts
     }
 
+    return render(request, template, context)
+
+
+def add_workout(request):
+    '''
+    allows superusers to add fitness classes to database
+    '''
+
+    form = WorkoutForm()
+
+    template = 'workouts/add_workout.html'
+    context = {
+        'form': form
+    }
     return render(request, template, context)
