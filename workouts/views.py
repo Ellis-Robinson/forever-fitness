@@ -8,6 +8,7 @@ from .models import Workout
 from .forms import WorkoutForm
 
 
+@login_required
 def members_area(request):
     ''' loads fitness classes page '''
 
@@ -19,6 +20,7 @@ def members_area(request):
     }
 
     return render(request, template, context)
+
 
 @login_required
 def my_workouts(request):
