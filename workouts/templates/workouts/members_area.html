@@ -39,6 +39,15 @@
                     <p class="card-text">
                         <strong>Duration: </strong>{{ workout.duration }}
                     </p>
+                    <small>
+                        <a href="{% url 'edit_workout' workout.id %}">
+                            Edit Workout
+                        </a>
+                        |
+                        <a class="text-danger" href="">
+                            Delete Workout
+                        </a>
+                    </small>
                     <a href="#" class="btn btn-primary">Add To My Routines</a>
                 </div>
             </div>
