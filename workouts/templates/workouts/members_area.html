@@ -36,6 +36,7 @@
                     <h5 class="card-title">{{ workout.title }}</h5>
                     <p class="card-text"><strong>Type: </strong>{{ workout.type_of_workout }}</p>
                     <p class="card-text"><strong>Description: </strong>{{ workout.description }}</p>
+                    <p class="card-text"><strong>Location: </strong>{{ workout.location }}</p>
                     <p class="card-text">
                         <strong>Duration: </strong>{{ workout.duration }}
                     </p>
@@ -50,7 +51,7 @@
                         </a>
                     </small>
                     {% endif %}
-                    <a href="#" class="btn btn-primary mt-2">Add To My Routines</a>
+                    <a href="{% url 'add_to_my_workouts' workout.id %}" class="btn btn-primary mt-2">Add To My Routines</a>
                 </div>
             </div>
         </div>

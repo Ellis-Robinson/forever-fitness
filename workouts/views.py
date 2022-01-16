@@ -117,3 +117,33 @@ def delete_workout(request, workout_id):
             'workout': workout,
         }
         return render(request, template, context)
+
+
+def add_to_my_workouts(request, workout_id):
+    '''
+    Allows users to link their profile to workouts
+    '''
+
+    workout = get_object_or_404(Workout, pk=workout_id)
+    profile = get_object_or_404(UserProfile, user=request.user)
+
+    workout.users.add(profile)
+
+    messages.success(request, 'Workout succesfully added to your workouts')
+
+    return redirect(reverse('members_area'))
+
+
+# def remove_from_my_workouts(request, workout_id):
+#     '''
+#     Allows users to link their profile to workouts
+#     '''
+
+#     workout = get_object_or_404(Workout, pk=workout_id)
+#     profile = get_object_or_404(UserProfile, user=request.user)
+
+#     workout.users.add(profile)
+
+#     messages.success(request, 'Workout succesfully added to your workouts')
+
+#     return redirect(reverse('members_area'))
