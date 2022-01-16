@@ -31,10 +31,18 @@
                     <p class="card-text"><strong>Type: </strong>{{ workout.type_of_workout }}</p>
                     <p class="card-text"><strong>Description: </strong>{{ workout.description }}</p>
                     <p class="card-text">
-                        <strong>Duration: </strong>{{ workout.duration }}
+                        {% if workout.date >= today %}
+                        <strong> Date: </strong>{{ workout.date }}
+                        {% else %}
+                        <strong> Date: </strong><span class="strike">{{ workout.date }}</span>
+                        <span class="text-danger"> This class has already happened </span>
+                        {% endif %}
                     </p>
+                    <p class="card-text"><strong>Location: </strong>{{ workout.location }}</p>
+                    <p class="card-text"><strong>Duration: </strong>{{ workout.duration }}</p>
                 </div>
             </div>
+            <a href="{% url 'remove_from_my_workouts' workout.id %}" class="btn btn-primary mt-2">Remove from my workouts</a>
         </div>
         {% endfor %}
     </div>

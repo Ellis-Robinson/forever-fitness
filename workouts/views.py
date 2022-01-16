@@ -2,6 +2,7 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from datetime import date
 
 from profiles.models import UserProfile
 from .models import Workout
@@ -27,10 +28,12 @@ def my_workouts(request):
     ''' loads page with users saved classes '''
     users_profile = get_object_or_404(UserProfile, user=request.user)
     workouts = Workout.objects.filter(users=users_profile)
+    today = date.today()
 
     template = 'workouts/my_workouts.html'
     context = {
-        'workouts': workouts
+        'workouts': workouts,
+        'today': today
     }
 
     return render(request, template, context)
@@ -127,23 +130,30 @@ def add_to_my_workouts(request, workout_id):
     workout = get_object_or_404(Workout, pk=workout_id)
     profile = get_object_or_404(UserProfile, user=request.user)
 
-    workout.users.add(profile)
+    if profile in workout.users.all():
+        messages.success(request, 'Workout already in your workouts!')
 
-    messages.success(request, 'Workout succesfully added to your workouts')
+        return redirect(reverse('members_area'))
+    
+    else:
+        workout.users.add(profile)
 
-    return redirect(reverse('members_area'))
+        messages.success(request, 'Workout succesfully added to your workouts!')
+
+        return redirect(reverse('members_area'))
 
 
-# def remove_from_my_workouts(request, workout_id):
-#     '''
-#     Allows users to link their profile to workouts
-#     '''
+@login_required
+def remove_from_my_workouts(request, workout_id):
+    '''
+    Allows users to link their profile to workouts
+    '''
 
-#     workout = get_object_or_404(Workout, pk=workout_id)
-#     profile = get_object_or_404(UserProfile, user=request.user)
+    workout = get_object_or_404(Workout, pk=workout_id)
+    profile = get_object_or_404(UserProfile, user=request.user)
 
-#     workout.users.add(profile)
+    workout.users.remove(profile)
 
-#     messages.success(request, 'Workout succesfully added to your workouts')
+    messages.success(request, 'Workout succesfully removed to your workouts')
 
-#     return redirect(reverse('members_area'))
+    return redirect(reverse('my_workouts'))

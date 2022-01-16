@@ -67,6 +67,10 @@ body {
     cursor: pointer;
 }
 
+.strike {
+    text-decoration-line: line-through;
+}
+
 /* ------------------------------- bootstrap toasts */
 
 .message-container {
@@ -84,7 +88,7 @@ body {
     height: 2px;
 }
 
-.bag-notification-wrapper{
+.bag-notification-wrapper {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
@@ -127,8 +131,8 @@ body {
 
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
-	/* btn */
-	display: inline-block;
+    /* btn */
+    display: inline-block;
     font-weight: 400;
     color: #fff;
     text-align: center;
@@ -147,11 +151,11 @@ body {
     border-radius: 0.25rem;
 
     /* standard bootstrap btn transitions */
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .allauth-form-inner-content input[type='submit'] {
-    
+
     color: #fff;
     background-color: #28a745;
     border-color: #28a745;
