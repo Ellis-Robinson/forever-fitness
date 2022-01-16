@@ -122,6 +122,7 @@ def delete_workout(request, workout_id):
         return render(request, template, context)
 
 
+@login_required
 def add_to_my_workouts(request, workout_id):
     '''
     Allows users to link their profile to workouts
@@ -134,7 +135,7 @@ def add_to_my_workouts(request, workout_id):
         messages.success(request, 'Workout already in your workouts!')
 
         return redirect(reverse('members_area'))
-    
+
     else:
         workout.users.add(profile)
 
