@@ -68,9 +68,6 @@
             </div>
         </div>
         <div class="row">
-            {% for item in wishlist %}
-            {{ item.product }}
-            {% endfor %}
             {% for product in products %}
             <div class="col-sm-6 col-md-4 col-lg-3 mt-1 mb-1">
                 <div class="product-card card">
@@ -93,11 +90,12 @@
                         <p class="card-text">No Rating</p>
                         {% endif %}
                         
-                        <a href="{% url 'add_to_wishlist' product.id %}">
+                        <a class="wishlist-heart" href="{% url 'add_to_wishlist' product.id %}">
                             <i class="far fa-heart"></i> 
                         </a>
 
-                        {% endif %}
+                        <br>
+
                         {% if request.user.is_superuser %}
                         <small>
                             <a href="{% url 'edit_product' product.id %}">

@@ -32,11 +32,22 @@ def add_to_wishlist(request, product_id):
 
     user_profile = get_object_or_404(UserProfile, user=request.user)
     users_wishlist = Wishlist.objects.filter(profile=user_profile)
+    wishlist_items = WishListItem.objects.all()
     product = Product.objects.get(pk=product_id)
+    item_list = []
 
-    new_item = WishListItem(wishlist=users_wishlist[0], product=product)
-    new_item.save()
+    for item in wishlist_items:
+        item_list.append(item.product)
 
-    messages.success(request, 'Product successfully added to your wishlist.')
+    # checks if chosen product is already in users wishlist
+    if product in item_list:
+        messages.success(request, 'Product already in your wishlist.')
+    else:
+        # creates new instance of WishListItem with product and users profile
+        new_wishlist_item = WishListItem(wishlist=users_wishlist[0],
+                                         product=product)
+        new_wishlist_item.save()
+        messages.success(request,
+                         'Product successfully added to your wishlist.')
 
     return redirect(reverse('products'))

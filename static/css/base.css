@@ -46,6 +46,11 @@ body {
     height: 10%;
 }
 
+.wishlist-heart {
+    color: grey;
+    cursor: pointer;
+}
+
 .ff-logo {
     width: 85px;
     height: 70px;
