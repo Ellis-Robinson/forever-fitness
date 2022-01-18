@@ -27,16 +27,19 @@ def wishlist(request):
 
 def add_to_wishlist(request, product_id):
     '''
-    allows users to add product to their wishlist
+    creates new wishlistitem connected to users wishlist
     '''
 
     user_profile = get_object_or_404(UserProfile, user=request.user)
     users_wishlist = Wishlist.objects.filter(profile=user_profile)
     wishlist_items = WishListItem.objects.all()
+    users_wishlist_items = wishlist_items.filter(wishlist=users_wishlist[0])
+
     product = Product.objects.get(pk=product_id)
     item_list = []
 
-    for item in wishlist_items:
+    # creates list of items in users wishlist
+    for item in users_wishlist_items:
         item_list.append(item.product)
 
     # checks if chosen product is already in users wishlist
@@ -49,5 +52,23 @@ def add_to_wishlist(request, product_id):
         new_wishlist_item.save()
         messages.success(request,
                          'Product successfully added to your wishlist.')
+
+    return redirect(reverse('products'))
+
+
+def remove_from_wishlist(request, product_id):
+    ''' deletes wishlistitem '''
+
+    # gets wishlist item with users profile and product id 
+    product = Product.objects.get(pk=product_id)
+    user_profile = get_object_or_404(UserProfile, user=request.user)
+    users_wishlist = Wishlist.objects.filter(profile=user_profile)
+    wishlist_items = WishListItem.objects.all()
+    users_wishlist_items = wishlist_items.filter(wishlist=users_wishlist[0])
+    product_in_wishlist = users_wishlist_items.filter(product=product)
+
+    product_in_wishlist.delete()
+    messages.success(request,
+                     'Product successfully removed from your wishlist.')
 
     return redirect(reverse('products'))

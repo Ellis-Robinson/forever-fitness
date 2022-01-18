@@ -14,17 +14,22 @@ from .forms import ProductForm
 
 def all_products(request):
     ''' a view that shows all products, and allows for searches of products'''
-    
+
     user_profile = get_object_or_404(UserProfile, user=request.user)
-    wishlist = Wishlist.objects.filter(profile=user_profile)
-    items = WishListItem.objects.all()
-    wishlist_items = items.filter(wishlist=wishlist[0])
+    users_wishlist = Wishlist.objects.filter(profile=user_profile)
+    wishlist_items = WishListItem.objects.all()
+    users_wishlist_items = wishlist_items.filter(wishlist=users_wishlist[0])
+    item_list = []
 
     products = Product.objects.all()
     query = None
     categories = None
     sort = None
     direction = None
+
+    # creates list of items in users wishlist
+    for item in users_wishlist_items:
+        item_list.append(item.product)
 
     if request.GET:
         if 'sort' in request.GET:
@@ -63,7 +68,7 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
-        'wishlist': wishlist_items
+        'wishlist': item_list
     }
 
     return render(request, 'products/products.html', context)

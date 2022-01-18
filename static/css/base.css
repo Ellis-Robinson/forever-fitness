@@ -46,7 +46,12 @@ body {
     height: 10%;
 }
 
-.wishlist-heart {
+.wishlist-red-heart {
+    color: red;
+    cursor: pointer;
+}
+
+.wishlist-grey-heart {
     color: grey;
     cursor: pointer;
 }
