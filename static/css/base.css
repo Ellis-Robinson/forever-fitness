@@ -25,7 +25,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50%;
+    height: 45%;
 }
 
 .user-order-section {
@@ -35,7 +35,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50%;
+    height: 45%;
+}
+
+.user-wishlist-section {
+    background-color: #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
 }
 
 .ff-logo {
