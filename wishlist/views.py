@@ -1,12 +1,14 @@
 ''' stores all functions for wishlist app '''
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from profiles.models import UserProfile
 from products.models import Product
 
 from .models import Wishlist, WishListItem
 
 
+@login_required
 def wishlist(request):
     ''' loads wishlist page '''
 
@@ -25,6 +27,7 @@ def wishlist(request):
     return render(request, template, context)
 
 
+@login_required
 def add_to_wishlist(request, product_id):
     '''
     creates new wishlistitem connected to users wishlist
@@ -56,10 +59,11 @@ def add_to_wishlist(request, product_id):
     return redirect(reverse('products'))
 
 
+@login_required
 def remove_from_wishlist(request, product_id):
     ''' deletes wishlistitem '''
 
-    # gets wishlist item with users profile and product id 
+    # gets wishlist item with users profile and product id
     product = Product.objects.get(pk=product_id)
     user_profile = get_object_or_404(UserProfile, user=request.user)
     users_wishlist = Wishlist.objects.filter(profile=user_profile)

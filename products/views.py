@@ -15,21 +15,21 @@ from .forms import ProductForm
 def all_products(request):
     ''' a view that shows all products, and allows for searches of products'''
 
-    user_profile = get_object_or_404(UserProfile, user=request.user)
-    users_wishlist = Wishlist.objects.filter(profile=user_profile)
-    wishlist_items = WishListItem.objects.all()
-    users_wishlist_items = wishlist_items.filter(wishlist=users_wishlist[0])
-    item_list = []
-
     products = Product.objects.all()
     query = None
     categories = None
     sort = None
     direction = None
 
-    # creates list of items in users wishlist
-    for item in users_wishlist_items:
-        item_list.append(item.product)
+    if request.user.is_authenticated:
+        user_profile = get_object_or_404(UserProfile, user=request.user)
+        users_wishlist = Wishlist.objects.filter(profile=user_profile)
+        wishlist_items = WishListItem.objects.all()
+        users_wishlist_items = wishlist_items.filter(wishlist=users_wishlist[0])
+        item_list = []
+        # creates list of items in users wishlist
+        for item in users_wishlist_items:
+            item_list.append(item.product)
 
     if request.GET:
         if 'sort' in request.GET:
@@ -63,13 +63,32 @@ def all_products(request):
 
     current_sorting = f'{sort}_{direction}'
 
-    context = {
-        'products': products,
-        'search_term': query,
-        'current_categories': categories,
-        'current_sorting': current_sorting,
-        'wishlist': item_list
-    }
+    if request.user.is_authenticated:
+        user_profile = get_object_or_404(UserProfile, user=request.user)
+        users_wishlist = Wishlist.objects.filter(profile=user_profile)
+        wishlist_items = WishListItem.objects.all()
+        users_wishlist_items = wishlist_items.filter(wishlist=users_wishlist[0])
+        item_list = []
+        # creates list of items in users wishlist
+        for item in users_wishlist_items:
+            item_list.append(item.product)
+
+        context = {
+            'products': products,
+            'search_term': query,
+            'current_categories': categories,
+            'current_sorting': current_sorting,
+            'wishlist': item_list
+        }
+    else:
+        context = {
+            'products': products,
+            'search_term': query,
+            'current_categories': categories,
+            'current_sorting': current_sorting,
+        }
+
+    
 
     return render(request, 'products/products.html', context)
 
