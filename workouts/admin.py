@@ -7,7 +7,7 @@ from .models import Workout
 
 class WorkoutAdmin(admin.ModelAdmin):
     '''
-    sorts out workouts admin
+    configurs Workout models admin display
     '''
     formfield_overrides = {
         models.ManyToManyField: {

@@ -21,5 +21,32 @@
             <hr>
         </div>
     </div>
+    <div class="row">
+        {% for item in items %}
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-1 mb-1">
+            <div class="product-card card">
+                <a href="{% url 'product_details' item.product.id %}">
+                    {% if item.product.image %}
+                    <img src="{{ item.product.image.url }}" class="card-img-top" alt="product.name">
+                    {% else %}
+                    <img src="{{ MEDIA_URL }}no-image.jpg" class="card-img-top" alt="product.name">
+                    {% endif %}
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">{{item.product.name}}</h5>
+                    <p class="card-text">£{{item.product.price}}</p>
+                    {% if item.product.category %}
+                    <p class="card-text"><i class="fas fa-tag"></i> {{item.product.category}}</p>
+                    {% endif %}
+                    {% if item.product.rating %}
+                    <p class="card-text"><i class="fas fa-star"></i> {{item.product.rating}}/10</p>
+                    {% else %}
+                    <p class="card-text">No Rating</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
