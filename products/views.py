@@ -6,12 +6,19 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
+from profiles.models import UserProfile
+from wishlist.models import Wishlist, WishListItem
 from .models import Product, Category
 from .forms import ProductForm
 
 
 def all_products(request):
     ''' a view that shows all products, and allows for searches of products'''
+    
+    user_profile = get_object_or_404(UserProfile, user=request.user)
+    wishlist = Wishlist.objects.filter(profile=user_profile)
+    items = WishListItem.objects.all()
+    wishlist_items = items.filter(wishlist=wishlist[0])
 
     products = Product.objects.all()
     query = None
@@ -55,7 +62,8 @@ def all_products(request):
         'products': products,
         'search_term': query,
         'current_categories': categories,
-        'current_sorting': current_sorting
+        'current_sorting': current_sorting,
+        'wishlist': wishlist_items
     }
 
     return render(request, 'products/products.html', context)
