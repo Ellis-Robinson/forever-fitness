@@ -36,11 +36,23 @@
                     <h4 class=""> My Orders </h4>
                 </a>
             </div>
+            {% if user in wishlist %}
             <div class="user-wishlist-section mt-1">
                 <a class="btn btn-dark" href="{% url 'wishlist' %}">
                     <h4 class=""> My Wishlist </h4>
                 </a>
             </div>
+            {% else %}
+            <div class="user-wishlist-section mt-1">
+                <form class="form" action="{% url 'wishlist' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="row mt-1 mb-1">
+                        <input type="submit" class="btn btn-dark" value="Start A Wishlist">
+                    </div>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                </form>
+            </div>
+            {% endif %}
         </div>
         <!-- default delivery information -->
         <div class="col col-lg-4">

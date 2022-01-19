@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
+from wishlist.models import Wishlist
+
 from .models import UserProfile
 from .forms import UserProfileForm
 
@@ -18,18 +20,26 @@ def user_profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Profile successfully updated")
-        else: 
+        else:
             messages.error(request, 'Unable to update profile. Is the form valid?')
 
     else:
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
 
+    # creates list of user profiles with wishlists attached
+    wishlists = Wishlist.objects.all()
+    wishlist_users = []
+    for w in wishlists:
+        wishlist_users.append(w.profile)
+
     template = 'profiles/profile.html'
     context = {
         'form': form,
         'orders': orders,
-        'on_profile_page': True
+        'on_profile_page': True,
+        'user': profile,
+        'wishlists': wishlist_users
     }
 
     return render(request, template, context)

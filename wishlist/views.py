@@ -13,15 +13,26 @@ def wishlist(request):
     ''' loads wishlist page '''
 
     user_profile = get_object_or_404(UserProfile, user=request.user)
-    users_wishlist = Wishlist.objects.filter(profile=user_profile)
-    items = WishListItem.objects.all()
-    users_items = items.filter(wishlist=users_wishlist[0])
+
+    if request.method == 'POST':
+        new_wishlist = Wishlist(name=user_profile, profile=user_profile)
+        new_wishlist.save()
+
+        users_wishlist = Wishlist.objects.filter(profile=user_profile)
+        items = WishListItem.objects.all()
+        users_items = items.filter(wishlist=users_wishlist[0])
+
+    else:
+        users_wishlist = Wishlist.objects.filter(profile=user_profile)
+        items = WishListItem.objects.all()
+        users_items = items.filter(wishlist=users_wishlist[0])
 
     template = 'wishlist/wishlist.html'
     context = {
         'template': template,
+        'user': user_profile,
         'wishlist': users_wishlist,
-        'items': users_items
+        'items': users_items,
     }
 
     return render(request, template, context)

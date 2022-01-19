@@ -21,16 +21,6 @@ def all_products(request):
     sort = None
     direction = None
 
-    if request.user.is_authenticated:
-        user_profile = get_object_or_404(UserProfile, user=request.user)
-        users_wishlist = Wishlist.objects.filter(profile=user_profile)
-        wishlist_items = WishListItem.objects.all()
-        users_wishlist_items = wishlist_items.filter(wishlist=users_wishlist[0])
-        item_list = []
-        # creates list of items in users wishlist
-        for item in users_wishlist_items:
-            item_list.append(item.product)
-
     if request.GET:
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
@@ -65,21 +55,29 @@ def all_products(request):
 
     if request.user.is_authenticated:
         user_profile = get_object_or_404(UserProfile, user=request.user)
-        users_wishlist = Wishlist.objects.filter(profile=user_profile)
-        wishlist_items = WishListItem.objects.all()
-        users_wishlist_items = wishlist_items.filter(wishlist=users_wishlist[0])
-        item_list = []
-        # creates list of items in users wishlist
-        for item in users_wishlist_items:
-            item_list.append(item.product)
 
-        context = {
-            'products': products,
-            'search_term': query,
-            'current_categories': categories,
-            'current_sorting': current_sorting,
-            'wishlist': item_list
-        }
+        wishlists = Wishlist.objects.all()
+        wishlist_users = []
+        for w in wishlists:
+            wishlist_users.append(w.profile)
+
+        if user_profile in wishlist_users:
+
+            users_wishlist = Wishlist.objects.filter(profile=user_profile)
+            wishlist_items = WishListItem.objects.all()
+            users_wishlist_items = wishlist_items.filter(wishlist=users_wishlist[0])
+            item_list = []
+            # creates list of items in users wishlist
+            for item in users_wishlist_items:
+                item_list.append(item.product)
+
+            context = {
+                'products': products,
+                'search_term': query,
+                'current_categories': categories,
+                'current_sorting': current_sorting,
+                'wishlist': item_list
+            }
     else:
         context = {
             'products': products,
@@ -87,8 +85,6 @@ def all_products(request):
             'current_categories': categories,
             'current_sorting': current_sorting,
         }
-
-    
 
     return render(request, 'products/products.html', context)
 
