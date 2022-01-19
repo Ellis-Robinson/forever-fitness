@@ -90,6 +90,7 @@
                         <p class="card-text">No Rating</p>
                         {% endif %}
                         
+                        {% if not request.user.is_anonymous %}
                         {% if product in wishlist %}
                         <a class="wishlist-red-heart" href="{% url 'remove_from_wishlist' product.id %}">
                             <i class="fas fa-heart"></i> 
@@ -98,6 +99,7 @@
                         <a class="wishlist-grey-heart" href="{% url 'add_to_wishlist' product.id %}">
                             <i class="fas fa-heart"><small>Add To Wishlist</small></i>
                         </a>
+                        {% endif %}
                         {% endif %}
 
                         <br>

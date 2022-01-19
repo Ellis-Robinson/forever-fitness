@@ -22,10 +22,11 @@
         </div>
     </div>
     <div class="row">
-        {% if user in wishlists %}
-        {{ user }}
-        {% endif %}
-
+            <a class="text-decoration-none" href="{% url 'products' %}">
+                <i class="fas fa-arrow-circle-left"></i> View Products
+            </a>
+    </div>
+    <div class="row">
         {% if items.count > 0 %}
         {% for item in items %}
         <div class="col-sm-6 col-md-4 col-lg-3 mt-1 mb-1">
@@ -48,12 +49,19 @@
                     {% else %}
                     <p class="card-text">No Rating</p>
                     {% endif %}
+
+                    <a class="wishlist-red-heart" href="{% url 'remove_from_wishlist' item.product.id %}">
+                        <small>Remove From Wishlist</small> 
+                    </a>
                 </div>
             </div>
         </div>
         {% endfor %}
         {% else %}
-        <p>THERES NOTHING HERE MATE!</p>
+        <p class="mb-4">You Wishlist Is Empty</p>
+            <a class="text-decoration-none" href="{% url 'products' %}">
+                <i class="fas fa-arrow-circle-left"></i> Add Some Products
+            </a>
         {% endif %}
     </div>
 </div>
