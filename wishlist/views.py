@@ -90,6 +90,7 @@ def remove_from_wishlist(request, product_id):
     return redirect(reverse('products'))
 
 
+@login_required
 def remove_from_return_to_wishlist(request, product_id):
     ''' deletes wishlistitem and returns to wishlist view '''
 

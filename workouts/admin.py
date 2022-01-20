@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.db import models
 from django.forms import CheckboxSelectMultiple
-from .models import Workout
+from .models import Workout, TypeOfWorkout
 
 
 class WorkoutAdmin(admin.ModelAdmin):
@@ -17,3 +17,4 @@ class WorkoutAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Workout, WorkoutAdmin)
+admin.site.register(TypeOfWorkout)

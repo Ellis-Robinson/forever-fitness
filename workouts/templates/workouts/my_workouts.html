@@ -25,7 +25,7 @@
         {% for workout in workouts %}
         <div class="col-3">
             <div class="card classes-card">
-                <img src="{{ MEDIA_URL }}no-image.jpg" class="card-img-top" alt="image of class type">
+                <img src="{{ MEDIA_URL }}{{workout.type_of_workout}}.jpg" class="card-img-top" alt="image of class type">
                 <div class="card-body">
                     <h5 class="card-title">{{ workout.title }}</h5>
                     <p class="card-text"><strong>Type: </strong>{{ workout.type_of_workout }}</p>
