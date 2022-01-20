@@ -30,7 +30,6 @@ def wishlist(request):
 
     template = 'wishlist/wishlist.html'
     context = {
-        'template': template,
         'user': user_profile,
         'wishlist': users_wishlist,
         'items': users_items,
@@ -74,7 +73,25 @@ def add_to_wishlist(request, product_id):
 
 @login_required
 def remove_from_wishlist(request, product_id):
-    ''' deletes wishlistitem '''
+    ''' deletes wishlistitem and returns to products view'''
+
+    # gets wishlist item with users profile and product id
+    product = Product.objects.get(pk=product_id)
+    user_profile = get_object_or_404(UserProfile, user=request.user)
+    users_wishlist = Wishlist.objects.filter(profile=user_profile)
+    wishlist_items = WishListItem.objects.all()
+    users_wishlist_items = wishlist_items.filter(wishlist=users_wishlist[0])
+    product_in_wishlist = users_wishlist_items.filter(product=product)
+
+    product_in_wishlist.delete()
+    messages.success(request,
+                     'Product successfully removed from your wishlist.')
+
+    return redirect(reverse('products'))
+
+
+def remove_from_return_to_wishlist(request, product_id):
+    ''' deletes wishlistitem and returns to wishlist view '''
 
     # gets wishlist item with users profile and product id
     product = Product.objects.get(pk=product_id)
