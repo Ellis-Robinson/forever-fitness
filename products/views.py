@@ -78,6 +78,13 @@ def all_products(request):
                 'current_sorting': current_sorting,
                 'wishlist': item_list
             }
+        else:
+            context = {
+                'products': products,
+                'search_term': query,
+                'current_categories': categories,
+                'current_sorting': current_sorting,
+            }
     else:
         context = {
             'products': products,
