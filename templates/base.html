@@ -46,9 +46,12 @@
 <body>
     <header class="container-fluid fixed-top">
         <div class="row bg-white">
-            <div class="logo d-none d-lg-block col-4 px-4 my-auto">
+            <div class="logo d-none d-lg-block col-4 my-auto">
                 <a href="{% url 'home' %}" class="nav-link text-dark">
-                    <h4>Forever Fitness</h4>
+                    <h4>
+                        <span class="ff-logo-lg-screen"></span>
+                        Forever Fitness
+                    </h4>
                 </a>
             </div>
 
@@ -110,8 +113,8 @@
         <div class="row bg-white">
             {% include 'includes/mobile-top-header.html' %}
             <nav class="navbar navbar-expand-md navbar-light w-100">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
-                    aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 {% include 'includes/main-nav.html' %}

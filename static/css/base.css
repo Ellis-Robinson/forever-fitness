@@ -2,6 +2,15 @@ body {
     height: 100%;
 }
 
+p {
+    margin-bottom: 0px;
+}
+
+#user-options,
+.bag {
+    padding: 0px;
+}
+
 .home-container {
     height: 100vh;
 }
@@ -60,7 +69,23 @@ body {
     width: 85px;
     height: 70px;
     background: url('/media/FFlogo.jpg') no-repeat center center;
-    background-size: cover
+    background-size: cover;
+    display: inline-block;
+}
+
+.ff-logo > h4 {
+    position: relative;
+    left: 80px;
+}
+
+.ff-logo-lg-screen {
+    width: 65px;
+    height: 38px;
+    background: url('/media/FFlogo.jpg') no-repeat center center;
+    background-size: cover;
+    display: inline-block;
+    top: 10px;
+    position: relative;
 }
 
 .product-card {
@@ -177,4 +202,13 @@ body {
     color: #fff;
     background-color: #28a745;
     border-color: #28a745;
+}
+
+/* media query */
+@media screen and (max-width: 766px) {
+    .floating-bars {
+        position: absolute;
+        left: 100px;
+        top: 6px;
+    }
 }
