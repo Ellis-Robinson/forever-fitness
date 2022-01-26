@@ -1,8 +1,15 @@
+''' holds form classes for profiles app '''
 from django import forms
 from .models import UserProfile
 
+
 class UserProfileForm(forms.ModelForm):
+    ''' defines form which is used to create users profile '''
     class Meta:
+        '''
+        defines which class is connected to the form
+        and which fields from that class to generate
+        '''
         model = UserProfile
         exclude = ('user',)
 

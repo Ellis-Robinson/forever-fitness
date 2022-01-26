@@ -7,8 +7,8 @@ class OrderForm(forms.ModelForm):
     ''' defines form which is used to create users order '''
     class Meta:
         '''
-        defines which class if connected to form
-        and whick fields from that class to generate
+        defines which class is connected to the form
+        and which fields from that class to generate
         '''
         model = Order
         fields = ('full_name', 'email', 'phone_number',

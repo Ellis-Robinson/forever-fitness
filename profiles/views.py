@@ -1,13 +1,15 @@
+'''
+views and functions for profile app
+'''
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 from wishlist.models import Wishlist
+from checkout.models import Order
 
 from .models import UserProfile
 from .forms import UserProfileForm
-
-from checkout.models import Order
 
 
 @login_required
@@ -21,7 +23,8 @@ def user_profile(request):
             form.save()
             messages.success(request, "Profile successfully updated")
         else:
-            messages.error(request, 'Unable to update profile. Is the form valid?')
+            messages.error(request, 'Unable to update profile.'
+                           ' Is the form valid?')
 
     else:
         form = UserProfileForm(instance=profile)
@@ -30,8 +33,8 @@ def user_profile(request):
     # creates list of user profiles with wishlists attached
     wishlists = Wishlist.objects.all()
     wishlist_users = []
-    for w in wishlists:
-        wishlist_users.append(w.profile)
+    for wishlist in wishlists:
+        wishlist_users.append(wishlist.profile)
 
     template = 'profiles/profile.html'
     context = {
@@ -62,6 +65,7 @@ def user_orders(request):
 
 @login_required
 def order_history(request, order_number):
+    ''' renders template for user to view past orders '''
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
