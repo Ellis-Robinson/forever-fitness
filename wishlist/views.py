@@ -1,7 +1,6 @@
 ''' stores all functions for wishlist app '''
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.contrib import messages
-from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from profiles.models import UserProfile
 from products.models import Product

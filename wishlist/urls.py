@@ -1,3 +1,4 @@
+''' holds url patterns for wishlist related views '''
 from django.urls import path
 from . import views
 

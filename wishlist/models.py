@@ -17,8 +17,11 @@ class Wishlist(models.Model):
 
 
 class WishListItem(models.Model):
-
-    wishlist = models.ForeignKey(Wishlist, on_delete=models.CASCADE, related_name='wishitems')
+    '''
+    defines fields for WishListItem class
+    '''
+    wishlist = models.ForeignKey(Wishlist, on_delete=models.CASCADE,
+                                 related_name='wishitems')
 
     product = models.ForeignKey(Product, null=False, blank=False,
                                 on_delete=models.CASCADE)
