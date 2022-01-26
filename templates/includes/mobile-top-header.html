@@ -18,14 +18,14 @@
 <div class="d-block col-5 offset-5 col-md-3 offset-md-0 d-lg-none my-auto">
     <ul class="list-inline list-unstyled text-right my-0">
         <li class="list-inline-item dropdown d-none d-sm-inline-flex">
-            <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+            <a class="nav-link" href="#" id="mobile-user-options" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
                 <div class="text-center text-dark">
                     <div><i class="fas fa-user fa-lg"></i></div>
                     <p class="my-0">My Account</p>
                 </div>
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+            <div class="dropdown-menu border-0" aria-labelledby="mobile-user-options">
                 {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
                 <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
