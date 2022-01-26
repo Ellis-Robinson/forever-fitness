@@ -24,7 +24,8 @@ class Workout(models.Model):
     '''
 
     title = models.CharField(max_length=250)
-    type_of_workout = models.ForeignKey(TypeOfWorkout, on_delete=models.SET_NULL,
+    type_of_workout = models.ForeignKey(TypeOfWorkout,
+                                        on_delete=models.SET_NULL,
                                         null=True, blank=True)
     description = models.TextField()
     date = models.DateField(default=(now() + datetime.timedelta(days=1)))

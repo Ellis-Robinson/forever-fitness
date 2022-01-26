@@ -1,3 +1,4 @@
+''' holds url patterns for workout related views '''
 from django.urls import path
 from . import views
 
@@ -11,6 +12,7 @@ urlpatterns = [
          name='delete_workout'),
     path('add_to_my_workouts/<workout_id>/', views.add_to_my_workouts,
          name='add_to_my_workouts'),
-    path('remove_from_my_workouts/<workout_id>/', views.remove_from_my_workouts,
+    path('remove_from_my_workouts/<workout_id>/',
+         views.remove_from_my_workouts,
          name='remove_from_my_workouts'),
 ]

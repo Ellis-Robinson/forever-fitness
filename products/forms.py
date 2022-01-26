@@ -9,8 +9,8 @@ class ProductForm(forms.ModelForm):
     '''
     class Meta:
         '''
-        defines which class if connected to form
-        and whick fields from that class to generate
+        defines which class is connected to the form
+        and which fields from that class to generate
         '''
         model = Product
         fields = '__all__'

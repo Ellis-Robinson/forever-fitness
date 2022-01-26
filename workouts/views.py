@@ -1,8 +1,8 @@
 ''' stores all functions for fitness_classes app '''
+from datetime import date
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from datetime import date
 
 from profiles.models import UserProfile
 from .models import Workout
@@ -139,7 +139,8 @@ def add_to_my_workouts(request, workout_id):
     else:
         workout.users.add(profile)
 
-        messages.success(request, 'Workout succesfully added to your workouts!')
+        messages.success(request,
+                         'Workout succesfully added to your workouts!')
 
         return redirect(reverse('members_area'))
 
