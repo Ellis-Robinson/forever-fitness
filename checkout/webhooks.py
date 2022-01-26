@@ -1,11 +1,11 @@
+''' stores webhook related functions '''
+import stripe
 from django.conf import settings
 from django.http import HttpResponse
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
 
-from checkout.webhook_handler import StripeWH_Handler
-
-import stripe
+from checkout.webhook_handler import StripeWhHandler
 
 
 @require_POST
@@ -24,17 +24,17 @@ def webhook(request):
     try:
         event = stripe.Webhook.construct_event(
             payload, sig_header, wh_secret)
-    except ValueError as e:
+    except ValueError:
         # Invalid payload
         return HttpResponse(status=400)
-    except stripe.error.SignatureVerificationError as e:
+    except stripe.error.SignatureVerificationError:
         # Invalid signature
         return HttpResponse(status=400)
-    except Exception as e:
-        return HttpResponse(content=e, status=400)
+    except Exception as error:
+        return HttpResponse(content=error, status=400)
 
     # Set up a webhook handler
-    handler = StripeWH_Handler(request)
+    handler = StripeWhHandler(request)
 
     # Map webhook events to relevant handler functions
     event_map = {

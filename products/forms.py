@@ -1,3 +1,4 @@
+''' holds form classes for products app '''
 from django import forms
 from .models import Product, Category
 
@@ -7,6 +8,10 @@ class ProductForm(forms.ModelForm):
     A form for super users to add products
     '''
     class Meta:
+        '''
+        defines which class if connected to form
+        and whick fields from that class to generate
+        '''
         model = Product
         fields = '__all__'
 

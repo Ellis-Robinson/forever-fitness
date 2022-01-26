@@ -58,8 +58,8 @@ def all_products(request):
 
         wishlists = Wishlist.objects.all()
         wishlist_users = []
-        for w in wishlists:
-            wishlist_users.append(w.profile)
+        for wishlist in wishlists:
+            wishlist_users.append(wishlist.profile)
 
         if user_profile in wishlist_users:
 
@@ -124,7 +124,8 @@ def add_product(request):
             messages.success(request, 'Product successfully added.')
             return redirect(reverse('product_details', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Is the form valid?')
+            messages.error(request, 'Failed to add product.'
+                           ' Is the form valid?')
     else:
         form = ProductForm()
 
@@ -151,7 +152,8 @@ def edit_product(request, product_id):
             messages.success(request, 'Product successfully updated.')
             return redirect(reverse('product_details', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Is the form valid?')
+            messages.error(request, 'Failed to update product.'
+                           ' Is the form valid?')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'you are editing {product.name}')
