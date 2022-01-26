@@ -1,21 +1,24 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+''' stores all functions for checkout app '''
+import json
+from django.shortcuts import (render, redirect, reverse,
+                              get_object_or_404, HttpResponse)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
 import stripe
-import json
 
 from bag.context import bag_contents
-from .forms import OrderForm
-from .models import Order, OrderLineItem
 from products.models import Product
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
+from .forms import OrderForm
+from .models import Order, OrderLineItem
 
 
 @require_POST
 def cache_checkout_data(request):
+    ''' checks if save info box, or checkout form is checked '''
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -32,6 +35,9 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    '''
+    takes user to checkout page/processes their order
+    '''
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -49,6 +55,7 @@ def checkout(request):
             'county': request.POST['county'],
         }
         order_form = OrderForm(form_data)
+        # saves order if form is valid
         if order_form.is_valid():
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
@@ -74,16 +81,19 @@ def checkout(request):
                                 product_size=size,
                             )
                             order_line_item.save()
+                # deletes order if product doesnt exist
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag does not exist in our database. "
+                        "One of the products in your bag"
+                        "does not exist in our database. "
                         "Please contact us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success',
+                                    args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
@@ -91,7 +101,8 @@ def checkout(request):
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(request,
+                           "There's nothing in your bag at the moment")
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)

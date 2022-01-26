@@ -1,8 +1,15 @@
+''' holds form classes for checkout app '''
 from django import forms
 from .models import Order
 
+
 class OrderForm(forms.ModelForm):
+    ''' defines form which is used to create users order '''
     class Meta:
+        '''
+        defines which class if connected to form
+        and whick fields from that class to generate
+        '''
         model = Order
         fields = ('full_name', 'email', 'phone_number',
                   'street_address1', 'street_address2',
