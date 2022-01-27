@@ -30,7 +30,7 @@ class Workout(models.Model):
     description = models.TextField()
     date = models.DateField(default=(now() + datetime.timedelta(days=1)))
     location = models.CharField(max_length=250, default="online")
-    duration = models.DurationField()
+    duration = models.CharField(max_length=250)
     users = models.ManyToManyField(UserProfile, blank=True)
 
     def __str__(self):
