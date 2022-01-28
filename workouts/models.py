@@ -28,11 +28,9 @@ class Workout(models.Model):
                                         on_delete=models.SET_NULL,
                                         null=True, blank=True)
     description = models.TextField()
-    # move logic to view?
-    date = models.DateField(default=(now() + datetime.timedelta(days=1)))
-    location = models.CharField(max_length=250, default="online")
-    # change to int
-    duration = models.CharField(max_length=250)
+    date = models.DateField()
+    location = models.CharField(max_length=250)
+    duration = models.IntegerField(max_length=3)
     users = models.ManyToManyField(UserProfile, blank=True)
 
     def __str__(self):
