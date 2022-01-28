@@ -92,7 +92,7 @@
                         
                         {% if not request.user.is_anonymous %}
                         {% if product in wishlist %}
-                        <a class="wishlist-red-heart" href="{% url 'remove_from_wishlist' product.id %}">
+                        <a class="wishlist-red-heart" href="{% url 'remove_from_wishlist' product.id 'products' %}">
                             <i class="fas fa-heart"></i> 
                         </a>
                         {% else %}

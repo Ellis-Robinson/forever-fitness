@@ -50,7 +50,7 @@
                     <p class="card-text">No Rating</p>
                     {% endif %}
 
-                    <a class="wishlist-red-heart" href="{% url 'remove_from_return_to_wishlist' item.product.id %}">
+                    <a class="wishlist-red-heart" href="{% url 'remove_from_wishlist' item.product.id 'wishlist' %}">
                         <small>Remove From Wishlist</small>
                     </a>
                 </div>
