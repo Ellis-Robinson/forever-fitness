@@ -134,15 +134,13 @@ def add_to_my_workouts(request, workout_id):
     if profile in workout.users.all():
         messages.success(request, 'Workout already in your workouts!')
 
-        return redirect(reverse('members_area'))
-
     else:
         workout.users.add(profile)
 
         messages.success(request,
                          'Workout succesfully added to your workouts!')
 
-        return redirect(reverse('members_area'))
+    return redirect(reverse('members_area'))
 
 
 @login_required
