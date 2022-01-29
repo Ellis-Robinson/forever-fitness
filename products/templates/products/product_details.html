@@ -13,14 +13,14 @@
 {% block content %}
 
 <div class="container-fluid">
-    <div class="col-10 offset-1 mb-4">
+    <div class="col-12 col-sm-10 offset-sm-1 mb-4">
         <div class="row">
             <div class="col text-center mt-3 mb-3">
                 <h2>Product Details</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col-6 mt-1 mb-1">
+            <div class="col-10 offset-1 col-sm-8 offset-sm-2 offset-md-0 col-md-6 mt-1 mb-1">
                 <div class="product-card card">
                     {% if product.image %}
                     <img src="{{ product.image.url }}" class="card-img-top" alt="product.name">
@@ -29,7 +29,7 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="col-6 mt-1 mb-1">
+            <div class="col-12 col-md-6 mt-1 mb-1">
                 <div class="product-card">
                     <div class="card-body">
                         <h5 class="card-title">{{product.name}}</h5>

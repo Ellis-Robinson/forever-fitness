@@ -206,10 +206,29 @@ p {
 }
 
 /* media query */
+@media screen and (max-width: 991px) {
+    .header-container {
+        padding-top: 200px;
+    }
+}
+
 @media screen and (max-width: 766px) {
     .floating-bars {
         position: absolute;
         left: 100px;
         top: 6px;
+    }
+    .header-container {
+        padding-top: 160px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .header-container {
+        padding-top: 180px;
+    }
+    .header-container ~ div > div {
+        margin: 0px;
+        padding: 0px;
     }
 }
