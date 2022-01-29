@@ -3,6 +3,7 @@ import datetime
 
 from django.db import models
 from django.utils.timezone import now
+from django.core.validators import RegexValidator
 from profiles.models import UserProfile
 
 
@@ -30,7 +31,8 @@ class Workout(models.Model):
     description = models.TextField()
     date = models.DateField()
     location = models.CharField(max_length=250)
-    duration = models.IntegerField(max_length=3)
+    duration = models.CharField(max_length=3,
+                                validators=[RegexValidator("^[0-9]*$)")])
     users = models.ManyToManyField(UserProfile, blank=True)
 
     def __str__(self):
