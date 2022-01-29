@@ -31,8 +31,10 @@ class Workout(models.Model):
     description = models.TextField()
     date = models.DateField()
     location = models.CharField(max_length=250)
-    duration = models.CharField(max_length=3,
-                                validators=[RegexValidator("^[0-9]*$)")])
+    duration = models.CharField(
+        max_length=3, validators=[RegexValidator(
+            regex='^[0-9]*$',
+            message='Input must be numeric',)])
     users = models.ManyToManyField(UserProfile, blank=True)
 
     def __str__(self):
