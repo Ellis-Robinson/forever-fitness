@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 from profiles.models import UserProfile
-from .models import Workout
+from .models import Workout, TypeOfWorkout
 from .forms import WorkoutForm
 
 
@@ -14,12 +14,14 @@ def members_area(request):
     ''' loads fitness classes page '''
 
     workouts = Workout.objects.all()
+    types_of_workout = TypeOfWorkout.objects.all()
     today = date.today()
 
     template = 'workouts/members_area.html'
     context = {
         'workouts': workouts,
-        'today': today
+        'today': today,
+        'types_of_workout': types_of_workout
     }
 
     return render(request, template, context)
@@ -30,12 +32,14 @@ def my_workouts(request):
     ''' loads page with users saved classes '''
     users_profile = get_object_or_404(UserProfile, user=request.user)
     workouts = Workout.objects.filter(users=users_profile)
+    types_of_workout = TypeOfWorkout.objects.all()
     today = date.today()
 
     template = 'workouts/my_workouts.html'
     context = {
         'workouts': workouts,
-        'today': today
+        'today': today,
+        'types_of_workout': types_of_workout
     }
 
     return render(request, template, context)

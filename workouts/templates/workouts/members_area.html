@@ -31,17 +31,24 @@
         {% for workout in workouts  %}
         <div class="col-3">
             <div class="card classes-card">
-                <img src="{{ MEDIA_URL }}{{workout.type_of_workout}}.jpg" class="card-img-top"
-                    alt="image of class type">
+                {% for type in types_of_workout %}
+                {% if type == workout.type_of_workout %}
+                {% if type.image %}
+                <img src="{{ type.image.url }}" class="card-img-top" alt="image of class type">
+                {% else %}
+                <img src="{{ MEDIA_URL }}no-image.jpg" class="card-img-top" alt="{{ type.name }}">
+                {% endif %}
+                {% endif %}
+                {% endfor %}
                 <div class="card-body">
                     <h5 class="card-title">{{ workout.title }}</h5>
                     <p class="card-text"><strong>Type: </strong>{{ workout.type_of_workout }}</p>
                     <p class="card-text"><strong>Description: </strong>{{ workout.description }}</p>
                     {% if workout.date >= today %}
-                        <strong> Date: </strong>{{ workout.date }}
+                    <strong> Date: </strong>{{ workout.date }}
                     {% else %}
-                        <strong> Date: </strong><span class="strike">{{ workout.date }}</span>
-                        <span class="text-danger"> This class has already happened </span>
+                    <strong> Date: </strong><span class="strike">{{ workout.date }}</span>
+                    <span class="text-danger"> This class has already happened </span>
                     {% endif %}
                     <p class="card-text"><strong>Location: </strong>{{ workout.location }}</p>
                     <p class="card-text">
