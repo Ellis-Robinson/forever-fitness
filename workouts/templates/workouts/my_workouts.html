@@ -21,6 +21,11 @@
             <hr>
         </div>
     </div>
+    <div class="row mb-4">
+        <a class="text-black" href="{% url 'profile' %}">
+            <i class="fas fa-arrow-left"></i> Back to Profile
+        </a>
+    </div>
     <div class="row mb-5">
         {% for workout in workouts %}
         <div class="col-3">
