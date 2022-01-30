@@ -14,10 +14,12 @@ def members_area(request):
     ''' loads fitness classes page '''
 
     workouts = Workout.objects.all()
+    today = date.today()
 
     template = 'workouts/members_area.html'
     context = {
-        'workouts': workouts
+        'workouts': workouts,
+        'today': today
     }
 
     return render(request, template, context)
@@ -130,13 +132,15 @@ def add_to_my_workouts(request, workout_id):
 
     workout = get_object_or_404(Workout, pk=workout_id)
     profile = get_object_or_404(UserProfile, user=request.user)
+    today = date.today()
 
-    if profile in workout.users.all():
+    if workout.date < today:
+        messages.error(request, 'Sorry, that class has already happened,'
+                       ' please choose another')
+    elif profile in workout.users.all():
         messages.success(request, 'Workout already in your workouts!')
-
     else:
         workout.users.add(profile)
-
         messages.success(request,
                          'Workout succesfully added to your workouts!')
 

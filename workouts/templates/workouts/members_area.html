@@ -31,12 +31,18 @@
         {% for workout in workouts  %}
         <div class="col-3">
             <div class="card classes-card">
-                <img src="{{ MEDIA_URL }}{{workout.type_of_workout}}.jpg" class="card-img-top" alt="image of class type">
+                <img src="{{ MEDIA_URL }}{{workout.type_of_workout}}.jpg" class="card-img-top"
+                    alt="image of class type">
                 <div class="card-body">
                     <h5 class="card-title">{{ workout.title }}</h5>
                     <p class="card-text"><strong>Type: </strong>{{ workout.type_of_workout }}</p>
                     <p class="card-text"><strong>Description: </strong>{{ workout.description }}</p>
-                    <p class="card-text"><strong>Date: </strong>{{ workout.date }}</p>
+                    {% if workout.date >= today %}
+                        <strong> Date: </strong>{{ workout.date }}
+                    {% else %}
+                        <strong> Date: </strong><span class="strike">{{ workout.date }}</span>
+                        <span class="text-danger"> This class has already happened </span>
+                    {% endif %}
                     <p class="card-text"><strong>Location: </strong>{{ workout.location }}</p>
                     <p class="card-text">
                         <strong>Duration: </strong>{{ workout.duration }} Minutes
@@ -52,7 +58,10 @@
                         </a>
                     </small>
                     {% endif %}
-                    <a href="{% url 'add_to_my_workouts' workout.id %}" class="btn btn-primary mt-2">Add To My Routines</a>
+                    {% if workout.date >= today %}
+                    <a href="{% url 'add_to_my_workouts' workout.id %}" class="btn btn-primary mt-2">Add To My
+                        Routines</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
