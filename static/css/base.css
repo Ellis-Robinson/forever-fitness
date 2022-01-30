@@ -35,7 +35,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 45%;
+    height: 40%;
 }
 
 .user-order-section {
@@ -45,15 +45,17 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 45%;
+    height: 40%;
 }
 
 .user-wishlist-section {
+    background: url('/media/wishlist.jpg') no-repeat center center;
+    background-size: cover;
     background-color: #555;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10%;
+    height: 20%;
 }
 
 .wishlist-red-heart {
@@ -209,6 +211,17 @@ p {
 @media screen and (max-width: 991px) {
     .header-container {
         padding-top: 200px;
+    }
+    .users-workout-routines-section {
+        height: 100%;
+    }
+    
+    .user-order-section {
+        height: 100%;
+    }
+    
+    .user-wishlist-section {
+        height: 100%;
     }
 }
 

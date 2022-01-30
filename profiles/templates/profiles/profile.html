@@ -24,8 +24,8 @@
         </div>
     </div>
     <div class="row mb-5">
-        <!-- fitness classes and order history links -->
-        <div class="col col-lg-8 order-2">
+        <!-- fitness classes, order history and wishlist links -->
+        <div class="col-12 col-lg-8 order-2">
             <div class="users-workout-routines-section mb-1">
                 <a class="btn btn-dark" href="{% url 'my_workouts' %}">
                     <h4 class=""> My Workout Routines </h4>
@@ -55,7 +55,7 @@
             {% endif %}
         </div>
         <!-- default delivery information -->
-        <div class="col col-lg-4">
+        <div class="col-12 col-lg-4 mb-2">
             <p class="text-muted">Default Delivery Information</p>
             <form class="mt-2 mb-2" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
@@ -64,4 +64,5 @@
             </form>
         </div>
     </div>
-    {% endblock %}
+</div>
+{% endblock %}
