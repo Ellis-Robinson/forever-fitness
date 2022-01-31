@@ -44,3 +44,47 @@
 ### Database Schema
 
 ![Database Schema](docs/README-imgs/database_FF.png)
+
+### Apps/Models
+
+- Bag app:
+    - Containts context.py which stores logic for the shopping bag and delivery costs usable across the whole site
+---
+- Checkout app:
+    - Order model:
+        - Foreign key = Profile
+        - Contains information about each order including; customer information, users profile, delivery cost and order total.
+        - Generates a unique order number.
+        - Updates the total using items from OrderLineItem model.
+    - OrderLineItem model:
+        - Foreign key = Order, Product
+        - Stores if a product has a size and the quantity.
+        - Saves the total price if contains multiples of the save product.
+---
+- Products app:
+    - Category model:
+        - Contains category name.
+    - Product model:
+        - Foreign key = Category
+        - Contains information on each product including if it has sizes.
+---
+- Profile app:
+    - Profile model:
+        - One to One connection relationship User model
+        - Contains delivery information about the user
+---
+- Wishlist app:
+    - Wishlist model:
+        - foreign key = Profile
+        - Contains items from WishlistLineItem model
+    - WishlistLineItem model:
+        - foreign key = Wishlist, Product
+---
+- Workouts app:
+    - TypeOfWorkout model:
+        - Contains a name and image
+    - Workout model:
+        - foreign key = TypeOfWorkout
+        - Many to Many relationship with Profile model
+        - Contains information about the workout i.e date, location
+---
