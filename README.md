@@ -5,6 +5,9 @@
         - [User Stories](#user-stories)
         - [Structure](#structure)
     - [Design](#design)
+        - [Database Schema](#database-schema)
+        - [Apps/Models](#apps/models)
+        - [Wireframes](#wireframes)
     - [Features](#features)
 - [Technologies](#technologies)
     - [Languages](#languages)
@@ -88,3 +91,27 @@
         - Many to Many relationship with Profile model
         - Contains information about the workout i.e date, location
 ---
+
+### Wireframes
+
+- [Checkout Page desktop-tablet-phone](docs/README-imgs/checkout.png)
+- [Home Page desktop-tablet-phone](docs/README-imgs/home_page.png)
+- [Item Details Page desktop-tablet-phone](docs/README-imgs/item_details.png)
+- [Products Page desktop-tablet-phone](docs/README-imgs/products.png)
+- [Shopping basket Page desktop-tablet-phone](docs/README-imgs/shopping_baskey.png)
+
+## Features
+
+# Technologies
+
+## Languages
+
+## Frameworks, Libraries and Programs Used
+
+# Testing
+
+# Bugs and Fixes
+
+# Deployment
+
+# Credits
