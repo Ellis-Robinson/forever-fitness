@@ -34,7 +34,7 @@ def bag_contents(request):
                     'size': size,
                 })
 
-    if total < settings.FREE_DELIVERY_THRESHOLD:
+    if total < settings.FREE_DELIVERY_THRESHOLD and not request.user.is_authenticated:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE/100)
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
     else:
