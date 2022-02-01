@@ -164,9 +164,28 @@ The Navigation section is constant across the whole of the site, the menues turn
 - **Produc Info**: Product name, price, category, rating and descripting
 - **Size Selector**: Dropdown box with sizes XS-XXL
 - **Quantity Selector**: Integer box with '+' and '-' buttons to increase/decrease quantity of item
-- **'Add to Bag**: Button which adds item to shopping bag
+- **'Add to Bag**: Button which adds item to shopping bag, displays success message, and shows preview of bag items and total.
 - **'Continue Shopping**: Button which links to products page
 - **'Go To Checkout'**: Button which links to shopping bag
+### Bag page
+- **'Shopping Bag**: Page header
+- **'Product Info'**: Table header 1
+    - **Products Image**
+    - **Product Name**
+    - **Product SKU number**
+- **'Size'**: Table header 2
+    - **Product Size**: Product size code i.e XS-XXL
+- **'Qty'**: Table header 3
+    - **Quantity Selector**: Integer box with '+' and '-' buttons to increase/decrease quantity of item
+    - **'Update'**: link that refreshes bag page with new quantity and subtotal updated.
+- **'Subtotal'**: Table header 4
+    - **Subtotal**: Price of item X Quantity of item
+- **'X'**: Red X which removes item(s) from bag
+- **'Bag Total'**: Total price of all items in bag
+- **'Delivery'**: Cost of delivery
+- **'Grad Total'**: Total price of all items in bag + delivery cost
+- **'Continue Shopping**: Button which links to products page
+- **'Go To Checkout'**: Button which links to Checkout page
 
 # Technologies
 
