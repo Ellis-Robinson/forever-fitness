@@ -186,6 +186,18 @@ The Navigation section is constant across the whole of the site, the menues turn
 - **'Grad Total'**: Total price of all items in bag + delivery cost
 - **'Continue Shopping**: Button which links to products page
 - **'Go To Checkout'**: Button which links to Checkout page
+### Checkout Page
+- **'Checkout'**: Page header
+- **Order Summary**: Miniture view of bag page, including: item count, product image, product name, size, quantity, subtotal, order total, delivery costs and grand total
+- **Order Form**: Form for users name, email address, delivery address.
+    - **Save details**: Checkbox to save users details to profile for quicker checkout
+- **Payment form**: Form for card details
+- **'Adjust Bag'**: Button which links to bag page
+- **'Complete Order'**: Button which checks forms are valid, requests payment from card and sends details to stripe, then loads checkout success page and success message.
+- **Charge warning**: Warning under buttons telling user how miuch the card will be charged
+### Checkout Success Page
+- **Checkout details**: Table showing order number, order date, order items, delivery details, order total, delivery cost and grand total
+- **'Back To Home Page'**: Button which links to home page 
 
 # Technologies
 
