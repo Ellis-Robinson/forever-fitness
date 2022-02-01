@@ -103,7 +103,7 @@
 ## Features
 
 ### Nav Section
-The Navigation section is constant across the whole of the site and has:
+The Navigation section is constant across the whole of the site, the menues turn into collapsibles at smaller screen sizes.
 - **Logo and brand name**: Links to the home page
 - **Search bar**: Filters products by name and description
 - **'My account'**: Dropdown menu
@@ -119,6 +119,8 @@ The Navigation section is constant across the whole of the site and has:
     *If user is Super User*
     - **'Product Management'**: Links to add product page
     - **'Class Management'**: Links to add workout page
+    - **'My Profile'**: Links to user profile
+    - **'Logout'**: Links to logout page  
 - **Shopping basket**: Displays price and links to shopping bag page
 - *Sort/Filter selection*
     - **'All Products'**: Dropdown menu
@@ -138,7 +140,33 @@ The Navigation section is constant across the whole of the site and has:
         - **Powders**: Links to products page and filters by category 'Powders'
         - **Bars**: Links to products page and filters by category 'Bars'
         - **All Consumables**: Links to products page and filters by category 'Powders' & 'Bars'
-
+### Home Page
+*if user is Anonymous*
+- **SHOP NOW!**: button over an image of workout equipment, links to products page
+*If user is Authorised*
+- **SHOP NOW!**: button over an image of workout equipment, links to products page
+- **'MEMBERS AREA'**: button over an image of people working out, links to workouts page
+### Products Page
+- **'Products'**: Page header
+- **Product Count**: Shows number of products found for current search
+- **Sort By**: Sort selector menu for price, rating, name and category both accending and decending. Reloads page with selected sorting 
+- **Product Card**
+    - **Product Image**: Links to product details page
+    - **Product info**: Product name, price category and rating
+    *if user is Authorised*
+    - **Add to Wishlist Heart**: Creates wishlist (if user doesnt have one) and adds selected item to it
+    *if user is superuser*
+    - **'Edit Product'**: Links to edit product page
+    - **'Delete Product'**: Links to delete product page
+### Product Details Page
+- **'Product Details'**: Page header
+- **Product Image**
+- **Produc Info**: Product name, price, category, rating and descripting
+- **Size Selector**: Dropdown box with sizes XS-XXL
+- **Quantity Selector**: Integer box with '+' and '-' buttons to increase/decrease quantity of item
+- **'Add to Bag**: Button which adds item to shopping bag
+- **'Continue Shopping**: Button which links to products page
+- **'Go To Checkout'**: Button which links to shopping bag
 
 # Technologies
 
