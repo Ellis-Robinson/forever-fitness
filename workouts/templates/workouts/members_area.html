@@ -24,7 +24,7 @@
     <div class="row mb-5">
         <!-- fitness classes -->
         <div class="col">
-            <h4 class="text-dark"> Workout Routines </h4>
+            <h4 class="text-dark"> Workout Classes </h4>
         </div>
     </div>
     <div class="row mb-5">
@@ -67,7 +67,7 @@
                     {% endif %}
                     {% if workout.date >= today %}
                     <a href="{% url 'add_to_my_workouts' workout.id %}" class="btn btn-primary mt-2">Add To My
-                        Routines</a>
+                        Classes</a>
                     {% endif %}
                 </div>
             </div>

@@ -198,6 +198,65 @@ The Navigation section is constant across the whole of the site, the menues turn
 ### Checkout Success Page
 - **Checkout details**: Table showing order number, order date, order items, delivery details, order total, delivery cost and grand total
 - **'Back To Home Page'**: Button which links to home page 
+### Workouts Page
+- **'Members Area'**: page heading
+- **'Workout Routines'**: Sub heading
+- **Class Card**: Contains information about the workout
+    - **Class image**: An image of the type of class i.e yoga, running
+    - **Class info**: Class name, type, date, location and duration.
+        *if user is superuser*
+        - **'Edit Workout'**: Links to edit workout page
+        - **'Delete Workout'**: Links to delete workout page
+    - **'Add To My Classes'**: Button which adds the workout class to users 'my workouts' sections of their profile and displays a success message.
+### My Profile Page
+- **'My Profile'**: Page header
+- **Defauly Deliver Info**: Form for users default delivery information
+- **Update Info**: Button which reloads page, saves default delivery information and displays a success message
+- **'My Workout Classes'**: Button over an image of group workout, links to 'my workouts' page
+- **'My Order'**: Button over an image of delivery boxes, links to 'my orders' page
+- **'My Wishlist'**: Button over an image of weights with a bow, links to 'my wishlist' page
+### My Workouts Page
+- **'My Workouts**: Page header
+- **'Back to Profile**: Link to 'my profile' page
+- **Class Card**: Contains information about the workout
+    - **Class image**: An image of the type of class i.e yoga, running
+    - **Class info**: Class name, type, date, location and duration.
+- **'Remove from my classes'**: Button which removes the workout class from users 'my workouts' sections of their profile and displays a success message.
+### User Orders Page
+- **'My Orders'**: Page header
+- **'Back to Profile**: Link to 'my profile' page
+- **Order history table**: Stores all of users past orders
+    - **'Order Number'**: Table header 1
+        - **Order number**: Order number which links to checkout success page for that order and displays warning message that this is a past order
+    - **'Date'**: Table header 2
+        - **Date**: Date the order was made
+    - **'Items'**: Table header 3
+        - **Order Items**: List of items in order including their name, size and quantity
+    - **'Order Total'**: Table header 4
+        - **Order Total**: Total price of the order
+### My Wishlist Page
+- **'My Wishlist'**: Page header
+- **'View Products**: Link to 'products' page
+- **'Back to Profile**: Link to 'my profile' page
+- **Product Card**
+    - **Product Image**: Links to product details page
+    - **Product info**: Product name, price category and rating
+    - **'Remove From Wishlist'**: Link which removes item from wishlist and loads users Wishlist
+
+*if user is superuser*
+### Product Management Page
+- **'Product Management'**: Page header
+- **'Add Product'**: Subheader
+- **Product form**: Form for adding product, includins: Category, Sku, Name, Description, Has Sizes, Price, Rating, Image Url, Image (**Choose file** button)
+- **'Cancel'**: Button which abandons the form and loads products page
+- **'Add Product'**: Button which checks form is valid, submits form and loads products page
+### Add Workout Page
+- **'Class Management'**: Page header
+- **'Add Workout'**: Subheader
+- **Workout form**: Form for adding a workout, includes: Title, Type, Description, Date, Location, Duration
+- **'Cancel'**: Button which abandons the form and loads home page
+- **'Add Product'**: Button which checks form is valid, submits form and loads Workouts page
+
 
 # Technologies
 
