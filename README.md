@@ -12,14 +12,13 @@ Forever Fitness is a fictional company which aims to sell fitness products and o
         - [Structure](#structure)
     - [Design](#design)
         - [Database Schema](#database-schema)
-        - [Apps/Models](#apps-models)
+        - [Apps/Models](#appsmodels)
         - [Wireframes](#wireframes)
     - [Features](#features)
 - [Technologies](#technologies)
     - [Languages](#languages)
     - [Libraries, Frameworks and programs](#libraries-frameworks-and-programs)
 - [Testing](#testing)
-- [Bugs and Fixes](#bugs-and-fixes)
 - [Deployment](#deployment)
 - [Credits](#credits)
 
@@ -273,7 +272,7 @@ The Navigation section is constant across the whole of the site, the menues turn
 - CSS
 - JavaScript
 
-## Libraries, Frameworks and Programs Used
+## Libraries, Frameworks and Programs
 - Git
 - Gitpod
 - Bootstrap
