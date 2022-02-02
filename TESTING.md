@@ -226,7 +226,7 @@
 
 ##### delete workout
 
-![delete-workout.html](docs/TESTING-imgs/code_validation/delete-workout.html.validator.png)
+![delete-workout.html](docs/TESTING-imgs/code_validation/delete-workout.html-validator.png)
 
 ##### edit product
 
