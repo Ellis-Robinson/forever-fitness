@@ -7,35 +7,35 @@
 
 # Contents
 - [User Stories](#user-stories)
-    - [User Story 1](#1)
-    - [User Story 2](#2)
-    - [User Story 3](#3)
-    - [User Story 4](#4)
-    - [User Story 5](#5)
-    - [User Story 6](#6)
-    - [User Story 7](#7)
-    - [User Story 8](#8)
-    - [User Story 9](#9)
-    - [User Story 10](#10)
-    - [User Story 11](#11)
-    - [User Story 12](#12)
-    - [User Story 13](#13)
-    - [User Story 14](#14)
-    - [User Story 15](#15)
-    - [User Story 16](#16)
-    - [User Story 17](#17)
-    - [User Story 18](#18)
+    - [User Story 1](#user-story-1)
+    - [User Story 2](#user-story-2)
+    - [User Story 3](#user-story-3)
+    - [User Story 4](#user-story-4)
+    - [User Story 5](#user-story-5)
+    - [User Story 6](#user-story-6)
+    - [User Story 7](#user-story-7)
+    - [User Story 8](#user-story-8)
+    - [User Story 9](#user-story-9)
+    - [User Story 10](#user-story-10)
+    - [User Story 11](#user-story-11)
+    - [User Story 12](#user-story-12)
+    - [User Story 13](#user-story-13)
+    - [User Story 14](#user-story-14)
+    - [User Story 15](#user-story-15)
+    - [User Story 16](#user-story-16)
+    - [User Story 17](#user-story-17)
+    - [User Story 18](#user-story-18)
     - [User Story 20](#20)
-    - [User Story 21](#21)
-    - [User Story 22](#22)
-    - [User Story 23](#23)
-    - [User Story 24](#24)
-    - [User Story 25](#25)
-    - [User Story 26](#26)
-    - [User Story 27](#27)
-    - [User Story 28](#28)
-    - [User Story 29](#29)
-    - [User Story 30](#30)
+    - [User Story 21](#user-story-21)
+    - [User Story 22](#user-story-22)
+    - [User Story 23](#user-story-23)
+    - [User Story 24](#user-story-24)
+    - [User Story 25](#user-story-25)
+    - [User Story 26](#user-story-26)
+    - [User Story 27](#user-story-27)
+    - [User Story 28](#user-story-28)
+    - [User Story 29](#user-story-29)
+    - [User Story 30](#user-story-30)
 
 - [Code Validation](#code-validation)
     - [add product](#add-product)
@@ -133,12 +133,13 @@
 **#17**
 
 ![User Story 17](docs/TESTING-imgs/user_stories/user_story_17.png)
+![User Story 17#2](docs/TESTING-imgs/user_stories/user_story_17.2.png)
 
 **#18**
 
 ![User Story 18](docs/TESTING-imgs/user_stories/user_story_18.png)
 
-**#20**
+- **#20**
 
 ![User Story 20](docs/TESTING-imgs/user_stories/user_story_20.png)
 ![User Story 20#2](docs/TESTING-imgs/user_stories/user_story_20.2.png)
@@ -215,7 +216,7 @@
 
 ![checkout-success.html](docs/TESTING-imgs/code_validation/checkout-success.html-validator.png)
 
-**checkout**
+- **checkout**
 
 ![checkout.html](docs/TESTING-imgs/code_validation/checkout.html-validator.png)
 

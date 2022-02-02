@@ -12,7 +12,7 @@ Forever Fitness is a fictional company which aims to sell fitness products and o
         - [Structure](#structure)
     - [Design](#design)
         - [Database Schema](#database-schema)
-        - [Apps/Models](#apps/models)
+        - [Apps/Models](#apps-models)
         - [Wireframes](#wireframes)
     - [Features](#features)
 - [Technologies](#technologies)
@@ -273,7 +273,7 @@ The Navigation section is constant across the whole of the site, the menues turn
 - CSS
 - JavaScript
 
-## Frameworks, Libraries and Programs Used
+## Libraries, Frameworks and Programs Used
 - Git
 - Gitpod
 - Bootstrap
@@ -321,12 +321,14 @@ For practicality the testing has been documented in a seperate file that can be 
     - Add and commit your changes, then push to heroku (I used gitpod so the command was `git push heroku main`)
 
 ## Setting up automatic deployment
-    - in heroku app:
-        - Select the 'Deploy' tab:
-            - Choose your deployment method i.e gitpod
-            - Search for your repository
-            - Click connect
-            - Enable automatic deploy
+- in heroku app:
+    - Select the 'Deploy' tab:
+        - Choose your deployment method i.e gitpod
+        - Search for your repository
+        - Click connect
+        - Enable automatic deploy
 
 
 # Credits
+
+## Images
