@@ -263,6 +263,7 @@ The Navigation section is constant across the whole of the site, the menues turn
 - **'Cancel'**: Button which abandons the form and loads home page
 - **'Add Product'**: Button which checks form is valid, submits form and loads Workouts page
 
+## Future Features
 
 # Technologies
 
@@ -285,9 +286,31 @@ The Navigation section is constant across the whole of the site, the menues turn
 
 For practicality the testing has been documented in a seperate file that can be found [Here](TESTING.md).
 
-
-# Bugs and Fixes
-
 # Deployment
+
+- The app was deployed on Heroku and used Amazon Web Services to store static and media files.
+
+## Creating a Heroku App
+
+- Registier/login on [Heroku](https://www.heroku.com/).
+- Click 'New' > 'Create new app'.
+- Give the app a name.
+- Select the region closest to you.
+
+## Setting up Postgres Database
+- On your Heroku app:
+    - Select 'Resources' tab.
+        - Search and select 'Heroku Postgres' add-on.
+
+- In your work enviroment:
+    - install *dj_database_url* and *psycopg2-binary* and update requirements.txt file
+    
+    - In settings.py:
+        - import dj_database_url
+        - Temporarily change your default DATABASES config to: *'default': dj_database_url.parse(* YOUR_DATABASE_URL *)* using the database url from your heroku app config vars. **After you apply the migrations, change DATABASES config back, so your database doesnt end up in version control**
+    - Apply migrations to new database useing *migrate* command in the terminal.
+    - Create a superuser using *createsuperuser* command in the terminal.
+
+
 
 # Credits
