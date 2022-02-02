@@ -112,6 +112,7 @@ def delete_workout(request, workout_id):
         return redirect(reverse('home'))
 
     workout = get_object_or_404(Workout, pk=workout_id)
+    types_of_workout = TypeOfWorkout.objects.all()
 
     if request.method == "POST":
 
@@ -124,6 +125,7 @@ def delete_workout(request, workout_id):
         template = 'workouts/delete_workout.html'
         context = {
             'workout': workout,
+            'types_of_workout': types_of_workout
         }
         return render(request, template, context)
 

@@ -1,3 +1,9 @@
+# Forever Fitness
+## Milestone Project 4
+![Responsive Mockup](docs/README-imgs/responsive_mockup.png)
+As part of my Full-Stack development course I have created a Full-Stack site based on busisness logic around a centrally owned database.
+Forever Fitness is a fictional company which aims to sell fitness products and offer fitness classes.
+[Link to Live Site!](https://ellis-forever-fitness.herokuapp.com/)
 # Contents
 
 - [User Experience](#user-experience)
@@ -244,7 +250,7 @@ The Navigation section is constant across the whole of the site, the menues turn
     - **'Remove From Wishlist'**: Link which removes item from wishlist and loads users Wishlist
 
 *if user is superuser*
-### Product Management Page
+### Add Product Page
 - **'Product Management'**: Page header
 - **'Add Product'**: Subheader
 - **Product form**: Form for adding product, includins: Category, Sku, Name, Description, Has Sizes, Price, Rating, Image Url, Image (**Choose file** button)
@@ -261,10 +267,24 @@ The Navigation section is constant across the whole of the site, the menues turn
 # Technologies
 
 ## Languages
+- Python
+- HTML
+- CSS
+- JavaScript
 
 ## Frameworks, Libraries and Programs Used
+- Git
+- Gitpod
+- Bootstrap
+- Django
+- Font Awesome
+- Postgres
+- Balsamiq
 
 # Testing
+
+For practicality the testing has been documented in a seperate file that can be found [Here](TESTING.md).
+
 
 # Bugs and Fixes
 
