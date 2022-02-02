@@ -303,14 +303,30 @@ For practicality the testing has been documented in a seperate file that can be 
         - Search and select 'Heroku Postgres' add-on.
 
 - In your work enviroment:
-    - install *dj_database_url* and *psycopg2-binary* and update requirements.txt file
+    - install `dj_database_url` and `psycopg2-binary` and update requirements.txt file
     
     - In settings.py:
-        - import dj_database_url
-        - Temporarily change your default DATABASES config to: *'default': dj_database_url.parse(* YOUR_DATABASE_URL *)* using the database url from your heroku app config vars. **After you apply the migrations, change DATABASES config back, so your database doesnt end up in version control**
+        - import `dj_database_url`
+        - Temporarily change your default DATABASES config to: `'default': dj_database_url.parse( YOUR_DATABASE_URL )` using the database url from your heroku app config vars. **After you apply the migrations, change DATABASES config back, so your database doesnt end up in version control**
     - Apply migrations to new database useing *migrate* command in the terminal.
     - Create a superuser using *createsuperuser* command in the terminal.
+    - In settings.py:
+        - Connect your project to the postgres database for the live site, and your default database for version control, using the config variable from Heroku by adding `if 'DATABASE_URL' in os.environ: DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))} else:`
+    before your default database settings
+    - Install `gunicorn` and update requirements.txt file.
+    - Create Procfile and add `web: gunicorn <YOUR_APP_NAME>.wsgi:application`
+    - Temporarily add `DISABLE_COLLECTSTATIC` to heroku config vars with value of `1` so heroku doesnt try to collect static files when you deploy
+    - in serrings.py:
+        - add hostname of your heroku app to ALLOWED_HOSTS
+    - Add and commit your changes, then push to heroku (I used gitpod so the command was `git push heroku main`)
 
+## Setting up automatic deployment
+    - in heroku app:
+        - Select the 'Deploy' tab:
+            - Choose your deployment method i.e gitpod
+            - Search for your repository
+            - Click connect
+            - Enable automatic deploy
 
 
 # Credits
