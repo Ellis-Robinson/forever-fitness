@@ -139,7 +139,7 @@
 
 ![User Story 18](docs/TESTING-imgs/user_stories/user_story_18.png)
 
-- **#20**
+- #20
 
 ![User Story 20](docs/TESTING-imgs/user_stories/user_story_20.png)
 ![User Story 20#2](docs/TESTING-imgs/user_stories/user_story_20.2.png)
