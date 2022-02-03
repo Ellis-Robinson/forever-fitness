@@ -418,10 +418,35 @@ For practicality the testing has been documented in a seperate file that can be 
 - Commit your changes and push them to heroku
 - Your S3 bucket should now have a 'static' folder in it with all your static files
 
-
-
-
+- In your bucket:
+    - Add folder called 'media'
+        - Add all your media files
+        - in 'Manage Public Permission' section, select 'grant public read access to these objects'
+        - Upload
 
 # Credits
 
-## Images
+- The main structure of the site came from the Code Institute 'Boutique Ado' project
+- General help from:
+    - Code Institutes Student Support
+    - Various sources from the ever helpful [Stack Overflow](https://stackoverflow.com/)
+    - [Geeks for Geeks](https://www.geeksforgeeks.org/)
+    - [Django documentation](https://docs.djangoproject.com/en/4.0/)
+    - [W3S](https://www.w3schools.com/)
+    - [MDN Web docs](https://developer.mozilla.org/en-US/docs/Web)
+
+
+### Images
+
+- logo- https://www.shutterstock.com/image-vector/barbell-infinity-con-logo-design-element-769503013
+- members area - https://shareexit.com/fitness-training-classes/
+- shop now - https://www.self.com/gallery/best-at-home-workout-equipment
+- my workout classes- https://getzpharma.com/health-post/are-group-exercises-for-you/
+- my orders - https://www.istockphoto.com/search/2/image?phrase=warehouse+boxes
+- my wishlist - https://www.shutterstock.com/image-photo/two-green-dumbbell-red-gift-bow-1174257412
+- product images - [google images](https://www.google.com/imghp?hl=en)
+- no-image -  https://www.istockphoto.com/vector/no-image-available-sign-gm922962354-253367026
+- yoga workout - https://www.istockphoto.com/vector/yoga-lotus-position-silhouette-vector-shape-gm1181152804-331160951
+- running workout - https://www.pinterest.co.uk/pin/551550285607372599/
+- weights workout - https://www.shutterstock.com/search/female+weight+lifting+silhouette
+- crossfit workout - https://in.pinterest.com/pin/475903885631405147/
