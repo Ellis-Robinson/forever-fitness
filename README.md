@@ -333,6 +333,11 @@ For practicality the testing has been documented in a seperate file that can be 
 - Select 'Personal' account type and fill out details then click 'Create Account and Continue'
 - Fill out the creditcard details, which will be charged if you go over the free useage limit
 - Sign into your new account
+
+## Creating a Bucket
+- Buckets are used to store files for your live site.
+
+
 - On dashboard, search and open S3
 - In Amazon s3:
     - Create a new bucket
@@ -357,6 +362,64 @@ For practicality the testing has been documented in a seperate file that can be 
                 - Copy and paste th policy into the 'bucket policy editor'
                 - On the end of 'Resource key' section of the policy add `/*` to allow access to all resources in the bucket
                 - Click 'Save'
+
+## Creating an IAM user
+- This is used to access your bucket, you will create a group for the user, create an access policy so the group can access you bucket, then assign the user to the group so it can use the policy to access all your files
+
+- On AWS dashboard search and open IAM
+- On IAM dashboard:
+    - On 'Groups' tab:
+        - Click 'Create New Group', give it a name, then click next till you come to 'Create Group'
+    - On 'Policies' tab:
+        - Click 'Create Policy'
+        - Go to 'JSON' tab
+        - Click 'import managed policy'
+        - Search for S3, and import the pre-built 's3 full access' policy
+        - Get your bucket ARN and paste it twice; once as it is, and once with `/*` at the end, after `"Resource":` and in square brackets: `[ "<YOUR_BUCKET_ARN>", "<YOUR_BUCKET_ARN>/*" ]`
+        - Click 'Review policy'
+        - Give it a name and description
+        - Click 'Create Policy'
+    - On 'Groups' tab:
+        - Select your bucket
+        - Click 'Attach Policy'
+        - Search, select and attach your newly created policy
+    - On 'Users' tab:
+        - Click 'Add User'
+        - Create a user for your static files
+        - Check 'Programatic access' box
+        - Click 'Next' to go to permissions page
+        - Check the box to select the group you just made
+        - Click next untill you reach 'Create User'
+        - Download and save the CSV file by clicking 'Download CSV'. This will contain the users access key and secret access key **Once you leave the page you will not be able to return and download the file again**
+
+## Connect Django to S3
+
+- In you workspace terminal, install `boto3` and `django-storages` then add to requirements.txt file
+- In settings.py:
+    - Add `storages` to installed apps
+    - Add `if 'USE_AWS' in os.environ: AWS_STORAGE_BUCKET_NAME = '<YOUR_BUCKET_NAME>' AWS_S3_REGION_NAME = ''<YOUR_BUCKET_REGION>' AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY') AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'`
+- In Heroku config vars:
+    - Add 'USE_AWS' = True, 'AWS_ACCESS_KEY_ID' and 'AWS_SECRET_ACCESS_KEY' variables from the CSV file you downloaded
+    - Remove 'Disable_COLLECTSTATIC' variable
+- Create 'custom_storages.py' file
+    - Add `from django.conf import settings` and `from storages.backends.23boto3 import s3Boto3Storage`
+    - Add a new class for Static files and one for Media files:
+        - `class StaticStorage(S3Boto3Storage): location = settings.STATICFILES_LOCATION`
+        - `class MediaStorage(S3Boto3Storage): location = settings.MEDIAFILES_LOCATION`
+- In settings.py:
+    - Add storage location for static and media files:
+        - `STATICFILES_STORAGE = 'custom_storages.StaticStorage'`
+        - `STATICFILES_LOCATION = 'static'`
+        - `DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'`
+        - `MEDIAFILES_LOCATION = 'media'`
+    - Add variables to overide static and media URLs in production:
+        - `STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'`
+        - `MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'`
+- Commit your changes and push them to heroku
+- Your S3 bucket should now have a 'static' folder in it with all your static files
+
+
+
 
 
 # Credits
