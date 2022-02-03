@@ -327,6 +327,37 @@ For practicality the testing has been documented in a seperate file that can be 
         - Click connect
         - Enable automatic deploy
 
+## Creating an AWS account
+- Go to [AWS](https://aws.amazon.com/) website and click 'Create an account'
+- Fill in the details and click 'Continue'
+- Select 'Personal' account type and fill out details then click 'Create Account and Continue'
+- Fill out the creditcard details, which will be charged if you go over the free useage limit
+- Sign into your new account
+- On dashboard, search and open S3
+- In Amazon s3:
+    - Create a new bucket
+    - Fill in details
+    - Uncheck 'block all public access'
+    - Check 'Acknowledge bucket will be public'
+    - Click 'Create bucket'
+    - In your new bucket:
+        - On 'Properties' tab:
+            - Select 'Static website hosting'
+            - Check 'Use this bucket to host a website' and fill in default values then click 'Save'
+        - On 'Permissions' tab:
+            - Go to 'CORS configuration' section and paste:
+             `[{ "AllowedHeaders": ["Authorization"],"AllowedMethods": ["GET"],"AllowedOrigins": ["*"],"ExposeHeaders": []}]`
+            - Go to 'Bucket Policy' section
+            - Click 'Policy generator' to create a security policy for the bucket
+                - Select 'S3 Bucket Policy' for Type of Policy
+                - Enter `*` in the 'Principal' sections to allow all principals
+                - Select `GetObject` in 'Actions' section
+                - Copy ARN (amazon resource name) from 'Bucket Policy' tab and past into ARN box on Policy Generator tab
+                - Click 'Add Statement' > 'Generate Policy'
+                - Copy and paste th policy into the 'bucket policy editor'
+                - On the end of 'Resource key' section of the policy add `/*` to allow access to all resources in the bucket
+                - Click 'Save'
+
 
 # Credits
 
