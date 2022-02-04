@@ -55,7 +55,7 @@
                     <p class="card-text"><strong>Duration: </strong>{{ workout.duration }}</p>
                 </div>
             </div>
-            <a href="{% url 'remove_from_my_workouts' workout.id %}" class="btn btn-primary mt-2">Remove from my
+            <a href="{% url 'remove_from_my_workouts' workout.id %}" class="btn btn-danger mt-2">Remove from my
                 Classes</a>
         </div>
         {% endfor %}

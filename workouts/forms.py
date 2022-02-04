@@ -1,6 +1,6 @@
 ''' holds form classes for workouts app '''
 from django import forms
-from .models import Workout
+from .models import Workout, TypeOfWorkout
 
 
 class DateInput(forms.DateInput):
@@ -29,6 +29,8 @@ class WorkoutForm(forms.ModelForm):
         labels and set autofocus on first field
         """
         super().__init__(*args, **kwargs)
+
+
         placeholders = {
             'title': 'Workout Title',
             'type_of_workout': 'Type',

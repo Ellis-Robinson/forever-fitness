@@ -27,19 +27,19 @@
         <!-- fitness classes, order history and wishlist links -->
         <div class="col-12 col-lg-8 order-2">
             <div class="users-workout-routines-section mb-1">
-                <a class="btn btn-dark" href="{% url 'my_workouts' %}">
-                    <h4 class=""> My Workout Classes </h4>
+                <a class="btn btn-black text-uppercase orange-glow" href="{% url 'my_workouts' %}">
+                    My Workout Classes
                 </a>
             </div>
             <div class="user-order-section mt-1">
-                <a class="btn btn-dark" href="{% url 'user_orders' %}">
-                    <h4 class=""> My Orders </h4>
+                <a class="btn btn-black text-uppercase orange-glow" href="{% url 'user_orders' %}">
+                    My Orders
                 </a>
             </div>
             {% if user in wishlists %}
             <div class="user-wishlist-section mt-1">
-                <a class="btn btn-dark" href="{% url 'wishlist' %}">
-                    <h4 class=""> My Wishlist </h4>
+                <a class="btn btn-black text-uppercase orange-glow" href="{% url 'wishlist' %}">
+                    My Wishlist 
                 </a>
             </div>
             {% else %}
@@ -47,7 +47,7 @@
                 <form class="form" action="{% url 'wishlist' %}" method="POST">
                     {% csrf_token %}
                     <div class="row mt-1 mb-1">
-                        <input type="submit" class="btn btn-dark" value="Start A Wishlist">
+                        <input type="submit" class="btn btn-black text-uppercase orange-glow" value="Start A Wishlist">
                     </div>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </form>
