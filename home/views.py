@@ -7,3 +7,4 @@ def index(request):
     ''' loads home page '''
 
     return render(request, 'home/index.html')
+

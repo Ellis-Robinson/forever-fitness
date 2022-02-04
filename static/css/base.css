@@ -172,6 +172,13 @@ a, a:hover, .dropdown-item{
     box-shadow: 0px 0px 8px 4px #fd9705;
 }
 
+.broken-chain {
+    background: url('/media/broken-chain.png') no-repeat center center;
+    background-size: cover;
+    width: auto;
+    height: 100vh;
+}
+
 /* ------------------------------- bootstrap toasts */
 
 .message-container {
