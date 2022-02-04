@@ -56,7 +56,7 @@
                     </p>
                     {% if request.user.is_superuser %}
                     <small>
-                        <a href="{% url 'edit_workout' workout.id %}">
+                        <a class="text-primary" href="{% url 'edit_workout' workout.id %}">
                             Edit Workout
                         </a>
                         |

@@ -426,7 +426,9 @@ For practicality the testing has been documented in a seperate file that can be 
 
 # Credits
 
+### Code 
 - The main structure of the site came from the Code Institute 'Boutique Ado' project
+- datepicker for add classes - https://www.youtube.com/watch?v=UidskJk0KiE
 - General help from:
     - Code Institutes Student Support
     - Various sources from the ever helpful [Stack Overflow](https://stackoverflow.com/)

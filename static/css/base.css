@@ -1,11 +1,53 @@
 body {
     height: 100%;
+    font-family: Alegreya;
+    color: black;
 }
 
 p {
     margin-bottom: 0px;
 }
 
+h1, h2, h3, h4 {
+    font-weight: 600;
+}
+
+a, a:hover, .dropdown-item{
+    color: #000;
+}
+
+.brand-orange,
+.brand-orange:hover {
+    color: #fb9a00;
+}
+
+.btn-brand {
+    color: #000;
+    background-color: #fb9a00;
+    border-color: #fb9a00;
+}
+
+.btn-brand:hover {
+    color: #000000;
+    background-color: #fbc606;
+    border-color: #fbc606;
+}
+
+.orange-glow{
+
+}
+
+.btn-black {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+}
+
+.btn-black:hover {
+    color: #fdfdfd;
+    background-color: #464646;
+    border-color: #464646;
+}
 #user-options,
 #main-nav-user-options,
 .bag {
@@ -115,6 +157,13 @@ p {
 
 .strike {
     text-decoration-line: line-through;
+}
+
+#delivery-banner > div,
+.members-area-section > div > h3 > a:hover,
+.shop-now-section > div > h3 > a:hover {
+    background-color: black;
+    box-shadow: 0px 0px 8px 4px #fd9705;
 }
 
 /* ------------------------------- bootstrap toasts */

@@ -106,7 +106,7 @@
 
                         {% if request.user.is_superuser %}
                         <small>
-                            <a href="{% url 'edit_product' product.id %}">
+                            <a class="text-primary" href="{% url 'edit_product' product.id %}">
                                 Edit Product
                             </a>
                             |
