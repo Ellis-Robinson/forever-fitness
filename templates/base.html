@@ -58,6 +58,7 @@
                 </a>
             </div>
 
+            <!-- search bar -->
             <div class="d-none d-lg-block col-lg-4 px-4 my-auto">
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
@@ -71,6 +72,8 @@
                     </div>
                 </form>
             </div>
+
+            <!-- account and bag section -->
             <div class="d-none d-lg-block col-lg-4 px-4 my-auto">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown mr-0">
@@ -113,16 +116,16 @@
                 </ul>
             </div>
         </div>
+
+        <!-- logo, account, bag and search bar for medium screens and down -->
+        
         <div class="row bg-white">
             {% include 'includes/mobile-top-header.html' %}
             <nav class="navbar navbar-expand-md navbar-light w-100">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
-                    aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
                 {% include 'includes/main-nav.html' %}
             </nav>
-        </div>
+        </div> 
+
         <div id="delivery-banner" class="row text-center">
             <div class="col text-white">
                 {% if request.user.is_authenticated %}
