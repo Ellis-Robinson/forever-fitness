@@ -441,6 +441,8 @@ For practicality the testing has been documented in a seperate file that can be 
 ### Images
 
 - logo- https://www.shutterstock.com/image-vector/barbell-infinity-con-logo-design-element-769503013
+    - create transparant background for logo - https://www.remove.bg/
+    - favicon - https://favicon.io/favicon-converter/
 - members area - https://shareexit.com/fitness-training-classes/
 - shop now - https://www.self.com/gallery/best-at-home-workout-equipment
 - my workout classes- https://getzpharma.com/health-post/are-group-exercises-for-you/

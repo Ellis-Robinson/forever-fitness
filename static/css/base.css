@@ -120,7 +120,7 @@ a, a:hover, .dropdown-item{
 .ff-logo {
     width: 85px;
     height: 70px;
-    background: url('/media/FFlogo.jpg') no-repeat center center;
+    background: url('/media/FFlogo.png') no-repeat center center;
     background-size: cover;
     display: inline-block;
 }
@@ -133,7 +133,7 @@ a, a:hover, .dropdown-item{
 .ff-logo-lg-screen {
     width: 65px;
     height: 38px;
-    background: url('/media/FFlogo.jpg') no-repeat center center;
+    background: url('/media/FFlogo.png') no-repeat center center;
     background-size: cover;
     display: inline-block;
     top: 10px;
