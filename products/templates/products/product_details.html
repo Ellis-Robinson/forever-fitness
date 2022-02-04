@@ -85,14 +85,23 @@
 
                                 <div class="col-12">
                                     <div class="row mt-1 mb-1">
-                                        <input type="submit" class="btn btn-success rounded-1" value="Add to Bag">
+                                        <input type="submit" class="btn btn-success font-weight-bold rounded-1" value="Add to Bag">
                                     </div>
                                     <div class="row mt-1 mb-1">
-                                        <a class="btn btn-black" href="{% url 'products' %}" role="button">Continue
-                                            Shopping</a>
+                                        <a class="btn btn-black font-weight-bold" href="{% url 'products' %}" role="button">
+                                            <span class="icon">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </span>
+                                            Continue Shopping
+                                        </a>
                                     </div>
                                     <div class="row mt-1 mb-1">
-                                        <a class="btn btn-brand" href="{% url 'bag' %}" role="button">Go To Checkout</a>
+                                        <a class="btn btn-brand font-weight-bold" href="{% url 'bag' %}" role="button">
+                                            Go To Checkout
+                                            <span class="icon">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </span>
+                                        </a>
                                     </div>
                                 </div>
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">

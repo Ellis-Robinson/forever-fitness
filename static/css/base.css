@@ -102,9 +102,19 @@ a, a:hover, .dropdown-item{
     cursor: pointer;
 }
 
+.wishlist-red-heart:hover {
+    color: red;
+    text-shadow: 0px 0px 8px red;
+}
+
 .wishlist-grey-heart {
     color: grey;
     cursor: pointer;
+}
+
+.wishlist-grey-heart:hover {
+    color: grey;
+    text-shadow: 0px 0px 8px grey;
 }
 
 .ff-logo {
@@ -206,7 +216,7 @@ a, a:hover, .dropdown-item{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 115, 0, 0.8);
+    background: rgba(251, 154, 0, 0.8);
     z-index: 9999;
 }
 

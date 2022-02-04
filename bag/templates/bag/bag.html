@@ -62,7 +62,7 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <button class="decrement-qty btn btn-small btn-dark rounded-0"
+                                            <button class="decrement-qty btn btn-small btn-black rounded-0"
                                                 data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                                                 <span>
                                                     <i class="fas fa-minus fa-xs"></i>
@@ -73,7 +73,7 @@
                                             name="quantity" value="{{ item.quantity }}" min="1" max="99"
                                             data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                         <div class="input-group-append">
-                                            <button class="increment-qty btn btn-small btn-dark rounded-0"
+                                            <button class="increment-qty btn btn-small btn-black rounded-0"
                                                 data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                                                 <span>
                                                     <i class="fas fa-plus fa-xs"></i>
@@ -86,7 +86,7 @@
                                     </div>
                                 </div>
                             </form>
-                            <a class="update-link text-info"><small>Update</small></a>
+                            <a class="update-link text-primary"><small>Update</small></a>
                         </td>
                         <td class="py-3">
                             <p class="my-0">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
@@ -112,9 +112,18 @@
                     </tr>
                     <tr>
                         <td colspan="5" class="text-right">
-                            <a class="btn btn-success" href="{% url 'products' %}" role="button">Continue
-                                Shopping</a>
-                            <a class="btn btn-warning" href="{% url 'checkout' %}" role="button">Go To Checkout</a>
+                            <a class="btn btn-black font-weight-bold" href="{% url 'products' %}" role="button">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                Continue Shopping
+                            </a>
+                            <a class="btn btn-brand font-weight-bold" href="{% url 'checkout' %}" role="button">
+                                Go To Checkout
+                                <span class="icon">
+                                    <i class="fas fa-chevron-right"></i>
+                                </span>
+                            </a>
                         </td>
                     </tr>
                 </table>

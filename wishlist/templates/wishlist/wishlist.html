@@ -23,7 +23,7 @@
     </div>
     {% if items.count > 0 %}
     <div class="row justify-content-between">
-        <a class="text-decoration-none" href="{% url 'products' %}">
+        <a class="text-black" href="{% url 'products' %}">
             <i class="fas fa-arrow-circle-left"></i> View Products
         </a>
     </div>
@@ -55,7 +55,7 @@
                     <p class="card-text">No Rating</p>
                     {% endif %}
 
-                    <a class="wishlist-red-heart" href="{% url 'remove_from_wishlist' item.product.id 'wishlist' %}">
+                    <a class="text-danger" href="{% url 'remove_from_wishlist' item.product.id 'wishlist' %}">
                         <small>Remove From Wishlist</small>
                     </a>
                 </div>
