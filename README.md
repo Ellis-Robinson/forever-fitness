@@ -264,9 +264,10 @@ The Navigation section is constant across the whole of the site, the menues turn
 
 ## Future Features
 
-- Email reminder for upcoming classes in users my workouts section
+- Email reminder for upcoming classes in users 'my workouts' section
 - Fitness blog
-- 
+- Edit email and username from 'my profile' section
+- Display number of items in bag above bag icon
 
 # Technologies
 
