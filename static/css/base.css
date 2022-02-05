@@ -59,6 +59,7 @@ a, a:hover, .dropdown-item{
     background: url('/media/shop-now.png') no-repeat center center;
     background-size: cover;
     color: #555;
+    margin-top: 2rem;
 }
 
 .members-area-section {
@@ -177,6 +178,9 @@ a, a:hover, .dropdown-item{
     background-size: cover;
     width: auto;
     height: 100vh;
+    position: relative;
+    bottom: 15vh;
+    z-index: -1;
 }
 
 /* ------------------------------- bootstrap toasts */
@@ -212,6 +216,19 @@ a, a:hover, .dropdown-item{
     top: 72px;
     right: 15px;
     z-index: 99999999999;
+}
+
+.page-footer {
+    height: 35px;
+    background-color: black;
+    box-shadow: 0px 0px 8px 4px #fd9705;
+    color: white;
+}
+
+.social-links > a {
+    color: white;
+    margin: 0px 10px;
+    font-size: 20px;
 }
 
 /* spinning overlay for checkout */

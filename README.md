@@ -264,6 +264,10 @@ The Navigation section is constant across the whole of the site, the menues turn
 
 ## Future Features
 
+- Email reminder for upcoming classes in users my workouts section
+- Fitness blog
+- 
+
 # Technologies
 
 ## Languages
@@ -454,3 +458,4 @@ For practicality the testing has been documented in a seperate file that can be 
 - running workout - https://www.pinterest.co.uk/pin/551550285607372599/
 - weights workout - https://www.shutterstock.com/search/female+weight+lifting+silhouette
 - crossfit workout - https://in.pinterest.com/pin/475903885631405147/
+- error page image - https://www.istockphoto.com/photo/broken-chain-a5-gm476922028-66410199
