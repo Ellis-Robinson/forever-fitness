@@ -219,7 +219,7 @@ a, a:hover, .dropdown-item{
 }
 
 .page-footer {
-    height: 35px;
+    height: fit-content;
     background-color: black;
     box-shadow: 0px 0px 8px 4px #fd9705;
     color: white;
