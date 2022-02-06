@@ -27,7 +27,7 @@
             <h4 class="text-dark"> Workout Classes </h4>
         </div>
     </div>
-    <div class="row mb-5">
+    <div class="row mb-4">
         {% for workout in workouts  %}
         <div class="col-10 offset-1 col-sm-6 offset-sm-0 col-offset-md-0 col-md-4 col-lg-3 mt-1 mb-1">
             <div class="card classes-card">
@@ -66,13 +66,29 @@
                     </small>
                     {% endif %}
                     {% if workout.date >= today %}
-                    <a href="{% url 'add_to_my_workouts' workout.id %}" class="btn btn-primary mt-2">Add To My
+                    <a href="{% url 'add_to_my_workouts' workout.id %}" class="btn btn-brand mt-2">Add To My
                         Classes</a>
                     {% endif %}
                 </div>
             </div>
         </div>
         {% endfor %}
+    </div>
+
+    <div class="col-12">
+        <hr>
+    </div>
+
+    <div class="row mb-5">
+        <!-- fitness blog -->
+        <div class="col">
+            <h4 class="text-dark"> Fitness Blog </h4>
+        </div>
+    </div>
+    <div class="row coming-soon-section mb-5">
+        <div class="mx-auto">
+            <span class="btn btn-lg btn-black text-uppercase">Coming Soon!</span>
+        </div>
     </div>
 </div>
     {% endblock %}

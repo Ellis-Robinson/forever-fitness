@@ -68,6 +68,23 @@ a, a:hover, .dropdown-item{
     color: #555;
 }
 
+.coming-soon-section {
+    background: url('/media/coming-soon.jpg') no-repeat center center;
+    background-size: cover;
+    color: #555;
+    height: 30vh;
+}
+
+.coming-soon-section > div > span,
+.coming-soon-section > div > span:hover {
+    position: relative;
+    top: 15%;
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+    cursor: default
+}
+
 .users-workout-routines-section {
     background: url('/media/group-exercise.jpg') no-repeat center center;
     background-size: cover;
@@ -211,6 +228,10 @@ a, a:hover, .dropdown-item{
     padding-top: 160px;
 }
 
+.footer-container {
+    padding-bottom: 40px
+}
+
 .message-container {
     position: fixed;
     top: 72px;
@@ -317,10 +338,13 @@ a, a:hover, .dropdown-item{
 
 @media screen and (max-width: 575px) {
     .header-container {
-        padding-top: 180px;
+        padding-top: 195px;
     }
     .header-container ~ div > div {
         margin: 0px;
         padding: 0px;
+    }
+    .footer-container {
+        padding-bottom: 60px
     }
 }
