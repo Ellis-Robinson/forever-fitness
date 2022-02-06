@@ -451,6 +451,7 @@ For practicality the testing has been documented in a seperate file that can be 
 - members area - https://shareexit.com/fitness-training-classes/
 - shop now - https://www.self.com/gallery/best-at-home-workout-equipment
 - my workout classes- https://getzpharma.com/health-post/are-group-exercises-for-you/
+- coming soon - https://www.istockphoto.com/search/search-by-image?assetid=1316219457&affiliateredirect=true&utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fdumbell-and-clock&utm_term=dumbell%20and%20clock%3A%3A%3A
 - my orders - https://www.istockphoto.com/search/2/image?phrase=warehouse+boxes
 - my wishlist - https://www.shutterstock.com/image-photo/two-green-dumbbell-red-gift-bow-1174257412
 - product images - [google images](https://www.google.com/imghp?hl=en)
