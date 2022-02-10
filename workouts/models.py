@@ -1,8 +1,5 @@
 ''' Classes and methods for workouts app '''
-import datetime
-
 from django.db import models
-from django.utils.timezone import now
 from django.core.validators import RegexValidator
 from profiles.models import UserProfile
 

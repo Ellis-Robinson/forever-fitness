@@ -1,9 +1,11 @@
 ''' stores classes relating to profiles '''
 from django.db import models
 from django.contrib.auth.models import User
-from django_countries.fields import CountryField
+from django.core.validators import RegexValidator
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+
+from django_countries.fields import CountryField
 
 
 class UserProfile(models.Model):
@@ -11,8 +13,12 @@ class UserProfile(models.Model):
     a user profile model. Stores default delivery information and order history
     '''
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    default_phone_number = models.CharField(max_length=20,
-                                            null=True, blank=True)
+    default_phone_number = models.CharField(max_length=11,
+                                            null=True, blank=True,
+                                            validators=[RegexValidator(
+                                                regex='^[0-9]*$',
+                                                message='Input must '
+                                                'be numeric',)])
     default_street_address1 = models.CharField(max_length=80,
                                                null=True, blank=True)
     default_street_address2 = models.CharField(max_length=80,

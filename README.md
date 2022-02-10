@@ -147,10 +147,11 @@ The Navigation section is constant across the whole of the site, the menues turn
         - **All Consumables**: Links to products page and filters by category 'Powders' & 'Bars'
 ### Home Page
 *if user is Anonymous*
-- **SHOP NOW!**: button over an image of workout equipment, links to products page
+- **SHOP NOW!**: button over an image of workout equipment with 100% viewpoint height, links to products page
+
 *If user is Authorised*
-- **SHOP NOW!**: button over an image of workout equipment, links to products page
-- **'MEMBERS AREA'**: button over an image of people working out, links to workouts page
+- **SHOP NOW!**: button over an image of workout equipment with 50% viewpoint height, links to products page
+- **'MEMBERS AREA'**: button over an image of people working out with 50% viewpoint height, links to workouts page
 ### Products Page
 - **'Products'**: Page header
 - **Product Count**: Shows number of products found for current search
