@@ -313,6 +313,9 @@ a, a:hover, .dropdown-item{
     .header-container {
         padding-top: 200px;
     }
+    .spacer-container {
+        padding-top: 30%;
+    }
     .users-workout-routines-section {
         height: 100%;
     }
@@ -335,6 +338,9 @@ a, a:hover, .dropdown-item{
     .header-container {
         padding-top: 160px;
     }
+    .spacer-container {
+        padding-top: 45%;
+    }
 }
 
 @media screen and (max-width: 575px) {
@@ -347,5 +353,14 @@ a, a:hover, .dropdown-item{
     }
     .footer-container {
         padding-bottom: 60px
+    }
+    .spacer-container {
+        padding-top: 45%;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .spacer-container {
+        padding-top: 70%;
     }
 }
