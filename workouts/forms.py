@@ -17,7 +17,7 @@ class WorkoutForm(forms.ModelForm):
         and which fields from that class to generate
         '''
         model = Workout
-        fields = ['title', 'type_of_workout', 'description',
+        fields = ['title', 'type', 'description',
                   'date', 'location', 'duration']
         widgets = {
             'date': DateInput()
@@ -33,7 +33,7 @@ class WorkoutForm(forms.ModelForm):
 
         placeholders = {
             'title': 'Workout Title',
-            'type_of_workout': 'Type',
+            'type': 'Type',
             'description': 'Description',
             'date': 'Date',
             'location': 'Location',

@@ -36,7 +36,7 @@
         <div class="col-3">
             <div class="card classes-card">
                 {% for type in types_of_workout %}
-                {% if type == workout.type_of_workout %}
+                {% if type == workout.type %}
                 {% if type.image %}
                 <img src="{{ type.image.url }}" class="card-img-top" alt="image of class type">
                 {% else %}
@@ -46,7 +46,7 @@
                 {% endfor %}
                 <div class="card-body">
                     <h5 class="card-title">{{ workout.title }}</h5>
-                    <p class="card-text"><strong>Type: </strong>{{ workout.type_of_workout }}</p>
+                    <p class="card-text"><strong>Type: </strong>{{ workout.type }}</p>
                     <p class="card-text"><strong>Description: </strong>{{ workout.description }}</p>
                     <p class="card-text">
                         {% if workout.date >= today %}

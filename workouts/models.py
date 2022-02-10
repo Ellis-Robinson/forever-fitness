@@ -22,9 +22,9 @@ class Workout(models.Model):
     '''
 
     title = models.CharField(max_length=250)
-    type_of_workout = models.ForeignKey(TypeOfWorkout,
-                                        null=True, blank=True,
-                                        on_delete=models.SET_NULL)
+    type = models.ForeignKey(TypeOfWorkout,
+                             null=True, blank=True,
+                             on_delete=models.SET_NULL)
     description = models.TextField()
     date = models.DateField()
     location = models.CharField(max_length=250)

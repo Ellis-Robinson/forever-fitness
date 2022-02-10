@@ -26,7 +26,7 @@
             <div class="col-6 mt-1 mb-1">
                 <div class="card classes-card">
                     {% for type in types_of_workout %}
-                    {% if type == workout.type_of_workout %}
+                    {% if type == workout.type %}
                     {% if type.image %}
                     <img src="{{ type.image.url }}" class="card-img-top" alt="image of class type">
                     {% else %}
