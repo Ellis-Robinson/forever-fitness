@@ -29,7 +29,8 @@ class WorkoutForm(forms.ModelForm):
         labels and set autofocus on first field
         """
         super().__init__(*args, **kwargs)
-
+        types_of_workout = TypeOfWorkout.objects.all()
+        types = [(t.id, t.__str__()) for t in types_of_workout]
 
         placeholders = {
             'title': 'Workout Title',
@@ -40,6 +41,7 @@ class WorkoutForm(forms.ModelForm):
             'duration': 'Duration in Minutes'
         }
 
+        self.fields['type'].choices = types
         self.fields['title'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if self.fields[field].required:
