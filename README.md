@@ -269,6 +269,7 @@ The Navigation section is constant across the whole of the site, the menues turn
 - Fitness blog
 - Edit email and username from 'my profile' section
 - Display number of items in bag above bag icon
+- filter and sort options for workouts
 
 # Technologies
 
