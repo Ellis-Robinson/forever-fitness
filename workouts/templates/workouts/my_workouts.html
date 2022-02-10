@@ -57,6 +57,7 @@
                         {% endif %}
                     </p>
                     <p class="card-text"><strong>Location: </strong>{{ workout.location }}</p>
+                    <p class="card-text"><strong>Time: </strong>{{ workout.time }}</p>
                     <p class="card-text"><strong>Duration: </strong>{{ workout.duration }}</p>
                     <a class="text-danger" href="{% url 'remove_from_my_workouts' workout.id %}">
                         <small>Remove From My Classes</small>
