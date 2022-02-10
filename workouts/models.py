@@ -28,6 +28,7 @@ class Workout(models.Model):
     description = models.TextField()
     date = models.DateField()
     location = models.CharField(max_length=250)
+    time = models.TimeField(default='12:00')
     duration = models.CharField(
         max_length=3, validators=[RegexValidator(
             regex='^[0-9]*$',

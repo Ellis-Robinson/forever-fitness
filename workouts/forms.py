@@ -18,7 +18,7 @@ class WorkoutForm(forms.ModelForm):
         '''
         model = Workout
         fields = ['title', 'type', 'description',
-                  'date', 'location', 'duration']
+                  'date', 'location', 'time', 'duration']
         widgets = {
             'date': DateInput()
         }
@@ -38,6 +38,7 @@ class WorkoutForm(forms.ModelForm):
             'description': 'Description',
             'date': 'Date',
             'location': 'Location',
+            'time': 'Time',
             'duration': 'Duration in Minutes'
         }
 
