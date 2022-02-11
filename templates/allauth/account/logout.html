@@ -6,10 +6,10 @@
 
 {% block inner_content %}
 
-<h2 class="mb-4 mt-4">{% trans "Sign Out" %}</h2>
+<h2 class="mb-4 mt-4">{% trans "Log Out" %}</h2>
 <hr>
 
-<p>{% trans 'Are you sure you want to sign out?' %}</p>
+<p>{% trans 'Are you sure you want to log out?' %}</p>
 
 <form method="post" action="{% url 'account_logout' %}">
   {% csrf_token %}
@@ -22,7 +22,7 @@
   </span>
     Home
   </a>
-  <button type="submit">{% trans 'Sign Out' %}</button>
+  <button type="submit">{% trans 'Log Out' %}</button>
 </form>
 
 
